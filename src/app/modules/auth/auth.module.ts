@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { RegisterComponent } from './register/register.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
     CommonModule,
     AuthRoutingModule,
     MatCardModule,
+    MatFormFieldModule,
   ]
 })
 export class AuthModule { }

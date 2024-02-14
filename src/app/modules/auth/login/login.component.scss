@@ -28,9 +28,23 @@
       &_login {
         display: grid;
         justify-content: center;
+        mat-card-title {
+          h4 {
+            position: absolute;
+            top: 197px;
+            left: 208px;
+          }
+        }
       }
     }
   }
+  .login-form {
+    margin-top: -27px;
+  }
+}
+
+img {
+  width: 210px !important;
 }
 
 :host {

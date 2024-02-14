@@ -1,3 +1,17 @@
+:host {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url(../../../../assets/images/artturi-jalli-Su1gc1A63xE-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
 .body-wrapper {
   // background-image: url(../../../../assets/images/pexels-pixabay-159107.jpg);
   // background-position: 100%;
@@ -45,18 +59,4 @@
 
 img {
   width: 210px !important;
-}
-
-:host {
-  display: block;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-image: url(../../../../assets/images/pexels-pixabay-159107.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
 }

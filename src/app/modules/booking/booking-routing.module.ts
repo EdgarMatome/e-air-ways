@@ -7,7 +7,7 @@ import { FlightsComponent } from './flights/flights.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'book',
+    redirectTo: 'search',
     pathMatch: 'full',
   },
   {

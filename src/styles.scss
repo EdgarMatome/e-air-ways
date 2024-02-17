@@ -4,6 +4,10 @@
 @use "./assets/scss/components/typography";
 @use "./assets/scss/components/form";
 @use "./assets/scss/components/buttons";
+@use "@angular/material" as mat;
+@use "@angular/material/theming";
+
+@include mat.core();
 
 // app-root {
 //   position: relative !important;
@@ -13,5 +17,11 @@
 //   margin: 0 !important;
 // }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

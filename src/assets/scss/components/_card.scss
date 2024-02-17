@@ -1,4 +1,8 @@
 .card {
+  background-color: #fff;
+}
+
+.card-login {
   margin-top: 15px;
   width: 476px;
   height: 476px;
@@ -10,4 +14,9 @@
   margin-bottom: 0;
   background-color: transparent !important;
   border-bottom: none !important;
+}
+
+// Search card styles
+.search-card {
+  width: 1200px;
 }

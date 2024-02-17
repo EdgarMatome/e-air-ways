@@ -8,6 +8,14 @@ import { TripSearchComponent } from './trip-search/trip-search.component';
 import { TripSearchControllerComponent } from './trip-search/trip-search-controller/trip-search-controller.component';
 import { FlightSearchComponent } from './trip-search/flight-search/flight-search.component';
 import { TripSearchSummaryComponent } from './trip-search/trip-search-summary/trip-search-summary.component';
+import { SearchCardComponent } from './trip-search/search-card/search-card.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatRadioModule } from '@angular/material/radio';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -18,10 +26,18 @@ import { TripSearchSummaryComponent } from './trip-search/trip-search-summary/tr
     TripSearchControllerComponent,
     FlightSearchComponent,
     TripSearchSummaryComponent,
+    SearchCardComponent,
   ],
   imports: [
     CommonModule,
-    BookingRoutingModule
-  ]
+    BookingRoutingModule,
+    MatCardModule,
+    MatRadioModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    FormsModule,
+    MatListModule
+  ],
 })
 export class BookingModule { }

@@ -2,4 +2,81 @@
   background-image: url(../../../../../assets/images/hendri-lidayani-eAiL5n0Yi0U-unsplash.jpg);
   background-position: 100%;
   background-size: cover;
+
+  .search-card-warpper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
+
+::ng-deep .cdk-overlay-pane {
+  position: absolute !important;
+  background-color: #fff;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+// .mat-radio-checked .mat-radio-inner-circle {
+//   background-color: red !important;
+// }
+
+// .mat-radio-checked.mat-accent .mat-ripple-element {
+//   background-color: blue !important;
+//   z-index: 999 !important; /* Change this to your desired color */
+// }
+
+// .mat-radio-checked .mat-radio-label-content {
+//   color: green !important;
+//   z-index: 999 !important;
+// }
+
+::ng-deep .mat-radio-checked .mat-radio-inner-circle {
+  background-color: rgb(6, 4, 133) !important;
+}
+
+.dep-destination {
+  margin-left: 150px;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  background-color: rgb(216, 216, 216) !important;
+  padding: 10px !important;
+  border-radius: 8px;
+  width: 260px;
+  // margin-left: 35px;
+  // margin-top: 25px;
+  margin: 25px 0 0 34px;
+}
+
+::ng-deep .material-icons {
+  // margin-left: 50px !important;
+  // margin-right: 45px !important;
+  margin: 0 45px 0 50px;
+  font-size: 33px !important;
+}
+
+// ::ng-deep .mat-select-placeholder {
+//   margin-bottom: 5px !important;
+// }
+
+// ::ng-deep .mat-option:hover {
+//   background-color: red !important;
+//   width: 270px !important;
+// }
+
+// .mat-select-panel {
+//   &.ng-animating {
+//     visibility: visible;
+//   }
+// }
+
+// ::ng-deep .mat-select-value {
+//   margin-top: 25px !important;
+//   // margin-left: 45px !important;
+// }
+// ::ng-deep .cdk-overlay-pane {
+//   width: 270px !important;
+// }

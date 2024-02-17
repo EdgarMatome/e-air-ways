@@ -1,0 +1,38 @@
+<mat-card class="card search-card mb-5 mt-5">
+  <mat-card-header>
+    <mat-radio-group
+      class="example-radio-group"
+      [(ngModel)]="selectedTravelType"
+      [value]=""
+    >
+      <mat-radio-button
+        class="example-radio-button mr-2"
+        *ngFor="let season of travelType"
+        [value]="season"
+      >
+        {{ season }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="dep-destination">
+      <mat-form-field>
+        <!-- <mat-label class="mat-lab">From</mat-label> -->
+        <mat-select [placeholder]="depature">
+          <mat-option *ngFor="let dep of depatures" [value]="dep.name">
+            {{ dep.name }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <span class="material-icons"> sync_alt </span>
+      <mat-form-field>
+        <!-- <mat-label class="mat-lab">From</mat-label> -->
+        <mat-select [placeholder]="destination">
+          <mat-option *ngFor="let des of destinations" [value]="des.name">
+            {{ des.name }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -10,28 +10,40 @@
   }
 }
 
+.date-wrapper {
+  display: inline-flex !important;
+}
+
+::ng-deep .ps-quantity {
+  left: 132px !important;
+
+  .mat-form-field-wrapper {
+    width: 132px !important;
+  }
+}
+::ng-deep .ps-level {
+  left: 92px !important;
+
+  .mat-form-field-wrapper {
+    width: 130px !important;
+  }
+}
+
+// TODO: rEMOVED RADIUS ON CLASS LEVELS AND ADD BORDER IN BERTWEEN
+
+// .passenger-class {
+//   display: inline-block;
+// }
+
+// Material override styles
 ::ng-deep .cdk-overlay-pane {
   position: absolute !important;
-  background-color: #fff;
+  background-color: #fff !important;
 }
 
 .mat-radio-button ~ .mat-radio-button {
   margin-left: 16px;
 }
-
-// .mat-radio-checked .mat-radio-inner-circle {
-//   background-color: red !important;
-// }
-
-// .mat-radio-checked.mat-accent .mat-ripple-element {
-//   background-color: blue !important;
-//   z-index: 999 !important; /* Change this to your desired color */
-// }
-
-// .mat-radio-checked .mat-radio-label-content {
-//   color: green !important;
-//   z-index: 999 !important;
-// }
 
 ::ng-deep .mat-radio-checked .mat-radio-inner-circle {
   background-color: rgb(6, 4, 133) !important;
@@ -54,13 +66,46 @@
 ::ng-deep .material-icons {
   // margin-left: 50px !important;
   // margin-right: 45px !important;
+  color: #000 !important;
   margin: 0 45px 0 50px;
   font-size: 33px !important;
 }
 
-// ::ng-deep .mat-select-placeholder {
-//   margin-bottom: 5px !important;
+// ::ng-deep .mat-select {
+//   color: #000 !important;
 // }
+::ng-deep .mat-select-arrow-wrapper {
+  color: #000 !important;
+}
+::ng-deep .mat-select-arrow {
+  color: #000 !important;
+}
+// ::ng-deep .mat-select-placeholder .mat-select-min-line {
+//   color: #000 !important;
+// }
+::ng-deep .mat-form-field-underline {
+  background-color: #000000 !important;
+  width: 240px !important;
+  display: none !important;
+}
+// ::ng-deep .mat-form-field-subscript-wrapper {
+//   color: #000 !important;
+// }
+::ng-deep .mat-form-field-hint-wrapper {
+  color: #000 !important;
+}
+::ng-deep .mat-form-field-label {
+  color: #000 !important;
+}
+::ng-deep .mat-form-field-label span {
+  color: #000 !important;
+}
+::ng-deep .mat-datepicker-input {
+  color: #000 !important;
+}
+::ng-deep .mat-icon-button {
+  color: #000 !important;
+}
 
 // ::ng-deep .mat-option:hover {
 //   background-color: red !important;
@@ -73,10 +118,9 @@
 //   }
 // }
 
-// ::ng-deep .mat-select-value {
-//   margin-top: 25px !important;
-//   // margin-left: 45px !important;
-// }
-// ::ng-deep .cdk-overlay-pane {
-//   width: 270px !important;
-// }
+::ng-deep .mat-select-value {
+  color: #000 !important;
+}
+::ng-deep .mat-select-placeholder .mat-select-min-line {
+  color: #000 !important;
+}

@@ -41,6 +41,8 @@ export class SearchCardComponent implements OnInit {
       available: true
     },
   ];
+  passengerQt: number[] = [1, 2, 3, 4, 5, 6]
+  passengerPlaceholder = 'Passengers'
   depature = 'From'
   destination = 'To'
   selectedTravelType: string = 'Return';

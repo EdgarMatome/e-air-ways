@@ -99,21 +99,14 @@
 }
 ::ng-deep .mat-datepicker-input {
   color: #000 !important;
+  font-size: 12px !important;
+}
+::ng-deep .mat-datepicker-toggle {
+  margin-right: -6px;
 }
 ::ng-deep .mat-icon-button {
   color: #000 !important;
 }
-
-// ::ng-deep .mat-option:hover {
-//   background-color: red !important;
-//   width: 270px !important;
-// }
-
-// .mat-select-panel {
-//   &.ng-animating {
-//     visibility: visible;
-//   }
-// }
 
 ::ng-deep .mat-select-value {
   color: #000 !important;
@@ -168,8 +161,9 @@
     height: 69px;
   }
 }
-// ::ng-deep .returnDt {
-//   .mat-form-field-wrapper {
-//     width: 130px !important;
-//   }
-// }
+
+::ng-deep .search {
+  position: absolute;
+  bottom: 172px;
+  left: 900px;
+}

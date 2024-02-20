@@ -15,17 +15,10 @@
 }
 
 ::ng-deep .ps-quantity {
-  left: 132px !important;
+  // left: 132px !important;
 
   .mat-form-field-wrapper {
     width: 132px !important;
-  }
-}
-::ng-deep .ps-level {
-  left: 92px !important;
-
-  .mat-form-field-wrapper {
-    width: 130px !important;
   }
 }
 
@@ -46,7 +39,7 @@
 }
 
 ::ng-deep .mat-radio-checked .mat-radio-inner-circle {
-  background-color: rgb(6, 4, 133) !important;
+  background-color: #111f44 !important;
 }
 
 .dep-destination {
@@ -61,6 +54,10 @@
   // margin-left: 35px;
   // margin-top: 25px;
   margin: 25px 0 0 34px;
+
+  .to {
+    margin-left: -35px;
+  }
 }
 
 ::ng-deep .material-icons {
@@ -124,3 +121,55 @@
 ::ng-deep .mat-select-placeholder .mat-select-min-line {
   color: #000 !important;
 }
+
+::ng-deep .departDt {
+  .mat-form-field-wrapper {
+    width: 130px !important;
+  }
+
+  .depart-inner {
+    .mat-form-field-wrapper {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-right: 2px solid #9e9999;
+    }
+  }
+
+  .returnDt {
+    position: relative;
+    right: 34px;
+    .mat-form-field-wrapper {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+  }
+}
+
+::ng-deep .ps-level {
+  position: relative;
+  right: 38px;
+
+  .mat-form-field-wrapper {
+    width: 130px !important;
+    border-left: 2px solid #9e9999;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+}
+
+::ng-deep .passenger-class {
+  position: relative;
+  /* top: -88px; */
+  bottom: 94px;
+  /* right: 50px; */
+  left: 422px;
+
+  .mat-form-field-wrapper {
+    height: 69px;
+  }
+}
+// ::ng-deep .returnDt {
+//   .mat-form-field-wrapper {
+//     width: 130px !important;
+//   }
+// }

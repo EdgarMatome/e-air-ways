@@ -42,7 +42,9 @@ export class SearchCardComponent implements OnInit {
     },
   ];
   passengerQt: number[] = [1, 2, 3, 4, 5, 6]
+  classLevel: string[] = ['Economy', 'First Class', 'Business', 'Premium']
   passengerPlaceholder = 'Passengers'
+  classLevelPlHolder = 'Class'
   depature = 'From'
   destination = 'To'
   selectedTravelType: string = 'Return';

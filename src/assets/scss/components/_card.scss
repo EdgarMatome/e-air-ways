@@ -18,5 +18,16 @@
 
 // Search card styles
 .search-card {
-  width: 1200px;
+  width: 975px;
+  padding-bottom: 30px !important;
 }
+
+// TODO: rePSONSIVE
+// @media (max-width: 1280px) {
+//   .search-card {
+//     width: calc(1200px - 200px);
+//     height: calc(400px - 150px);
+
+//     // height: 176px;
+//   }
+// }

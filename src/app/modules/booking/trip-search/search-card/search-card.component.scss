@@ -26,6 +26,10 @@
   margin-left: 16px;
 }
 
+::ng-deep .mat-radio-outer-circle {
+  border: 1px solid gray;
+}
+
 ::ng-deep .mat-radio-checked .mat-radio-inner-circle {
   background-color: #111f44 !important;
 }

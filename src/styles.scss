@@ -9,19 +9,9 @@
 
 @include mat.core();
 
-// app-root {
-//   position: relative !important;
-//   width: inherit !important;
-//   height: 100vh !important;
-//   left: 0 !important;
-//   margin: 0 !important;
-// }
-
 html,
 body {
-  height: 100%;
-}
-body {
   margin: 0;
+
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }

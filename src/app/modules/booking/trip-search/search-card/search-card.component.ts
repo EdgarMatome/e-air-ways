@@ -51,6 +51,8 @@ export class SearchCardComponent implements OnInit {
   travelType: string[] = ['Return', 'One-Way', 'Multi-Way'];
 
   selectedRadio = 'Return'
+  isOneWayTrip = false;
+  // tripType = 'oneway'
   // dstinations: any = ['Cape Town Int', 'Durban Int', 'OR Tambo Int']
 
   constructor(private elementRef: ElementRef) { }
@@ -58,6 +60,15 @@ export class SearchCardComponent implements OnInit {
   ngOnInit(): void {
     if (this.elementRef) {
       this.elementRef.nativeElement.focus();
+    }
+  }
+
+  selectTrip(event: any): void {
+    console.log('Event', event)
+    if (event.value === 'One-Way') {
+      this.isOneWayTrip = true;
+    } else {
+      this.isOneWayTrip = false;
     }
   }
 

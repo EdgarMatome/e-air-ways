@@ -3,10 +3,11 @@
     <mat-radio-group class="ex" [(ngModel)]="selectedTravelType" [value]="">
       <mat-radio-button
         class="radio-button text-dark mr-2"
-        *ngFor="let season of travelType"
-        [value]="season"
+        *ngFor="let trip of travelType"
+        [value]="trip"
+        (change)="selectTrip($event)"
       >
-        {{ season }}
+        {{ trip }}
       </mat-radio-button>
     </mat-radio-group>
   </mat-card-header>
@@ -41,7 +42,11 @@
             ></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-          <mat-form-field class="returnDt" appearance="fill">
+          <mat-form-field
+            class="returnDt"
+            *ngIf="!isOneWayTrip"
+            appearance="fill"
+          >
             <mat-label>Return</mat-label>
             <input matInput [matDatepicker]="picker1" />
             <mat-datepicker-toggle

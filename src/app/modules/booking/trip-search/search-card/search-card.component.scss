@@ -109,6 +109,17 @@
 }
 
 ::ng-deep .departDt {
+  .oneway {
+    .mat-form-field-wrapper {
+      width: 260px !important;
+      border-top-right-radius: 8px !important;
+      border-bottom-right-radius: 8px !important;
+      border-right: none !important;
+    }
+  }
+}
+
+::ng-deep .departDt {
   .mat-form-field-wrapper {
     width: 130px !important;
   }
@@ -145,6 +156,11 @@
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
   }
+}
+
+::ng-deep .isOneWay {
+  position: relative !important;
+  left: 86px !important;
 }
 
 ::ng-deep .passenger-class {

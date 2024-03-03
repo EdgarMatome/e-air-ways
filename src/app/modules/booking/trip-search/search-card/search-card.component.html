@@ -33,7 +33,11 @@
 
       <div class="date-wrapper">
         <div class="departDt">
-          <mat-form-field class="depart-inner" appearance="fill">
+          <mat-form-field
+            class="depart-inner"
+            [ngClass]="{ oneway: isOneWayTrip }"
+            appearance="fill"
+          >
             <mat-label>Depart</mat-label>
             <input matInput [matDatepicker]="picker" />
             <mat-datepicker-toggle
@@ -59,7 +63,7 @@
         <!-- <div class="returnDt">
         </div> -->
 
-        <div class="passenger-class">
+        <div class="passenger-class" [ngClass]="{ isOneWay: isOneWayTrip }">
           <mat-form-field class="ps-quantity">
             <mat-select [placeholder]="passengerPlaceholder">
               <mat-option

@@ -1,8 +1,14 @@
 .wrapper {
-  background-image: url(../../../../../assets/images/hendri-lidayani-eAiL5n0Yi0U-unsplash.jpg);
+  background-image: url(../../../../../assets/images/holiday4.jpg);
   background-position: 100%;
   background-size: cover;
-  color: #fff;
+  color: #000000;
+
+  .card-heading {
+    position: relative;
+    top: 58px;
+    left: 257px;
+  }
 
   .search-card-warpper {
     display: flex;

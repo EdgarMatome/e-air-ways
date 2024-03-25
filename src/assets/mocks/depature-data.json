@@ -1,0 +1,226 @@
+[
+  {
+    "location": "Cape Town Int. Airport (CPT)",
+    "isAvailable": true,
+    "AirplaneType": "B747",
+    "routes": [
+      {
+        "location": "Bram Fischer Int. Airport (BFN)"
+      },
+      {
+        "location": "East London Airport (ELS)"
+      },
+      {
+        "location": "George Airport (GRJ)"
+      },
+      {
+        "location": "King Shaka Int. Airport (DUR)"
+      },
+      {
+        "location": "Kruger Mpumalanga Int. Airport (MQP)"
+      },
+      {
+        "location": "Lanseria Int. Airport (HLA)"
+      },
+      {
+        "location": "O.R Tambo Int. Airport (JNB)"
+      },
+      {
+        "location": "Port Elizabeth Int. Airport (PLZ)"
+      }
+    ]
+  },
+  {
+    "location": "East London Airport (ELS)",
+    "isAvailable": true,
+    "AirplaneType": "B747",
+    "routes": [
+      {
+        "location": "Cape Town Int. Airport (CPT)"
+      },
+      {
+        "location": "King Shaka Int. Airport (DUR)"
+      },
+      {
+        "location": "O.R Tambo Int. Airport (JNB)"
+      }
+    ]
+  },
+  {
+    "location": "King Shaka Int. Airport (DUR)",
+    "isAvailable": true,
+    "AirplaneType": "B747",
+    "routes": [
+      {
+        "location": "Cape Town Int. Airport (CPT)"
+      },
+      {
+        "location": "East London Airport (ELS)"
+      },
+      {
+        "location": "Lanseria Int. Airport (HLA)"
+      },
+      {
+        "location": "O.R Tambo Int. Airport (JNB)"
+      },
+      {
+        "location": "Port Elizabeth Int. Airport (PLZ)"
+      }
+    ]
+  },
+  {
+    "location": "Lanseria Int. Airport (HLA)",
+    "isAvailable": true,
+    "AirplaneType": "B747",
+    "routes": [
+      {
+        "location": "Cape Town Int. Airport (CPT)"
+      },
+      {
+        "location": "King Shaka Int. Airport (DUR)"
+      }
+    ]
+  },
+  {
+    "location": "Zanzibar Int. Airport (ZNZ)",
+    "isAvailable": true,
+    "AirplaneType": "B747",
+    "routes": [
+      {
+        "location": "O.R Tambo Int. Airport (JNB)"
+      }
+    ]
+  },
+  {
+    "location": "Kruger Mpumalanga Int. Airport (MQP)",
+    "isAvailable": true,
+    "AirplaneType": "B747",
+    "routes": [
+      {
+        "location": "Cape Town Int. Airport (CPT)"
+      }
+    ]
+  },
+  {
+    "location": "George Airport (GRJ)",
+    "isAvailable": true,
+    "AirplaneType": "B747",
+    "routes": [
+      {
+        "location": "Cape Town Int. Airport (CPT)"
+      },
+      {
+        "location": "O.R Tambo Int. Airport (JNB)"
+      }
+    ]
+  },
+  {
+    "location": "Bram Fischer Int. Airport (BFN)",
+    "isAvailable": true,
+    "AirplaneType": "B747",
+    "routes": [
+      {
+        "location": "O.R Tambo Int. Airport (JNB)"
+      },
+      {
+        "location": "Cape Town Int. Airport (CPT)"
+      }
+    ]
+  },
+  {
+    "location": "O.R Tambo Int. Airport (JNB)",
+    "isAvailable": true,
+    "AirplaneType": "B747",
+    "routes": [
+      {
+        "location": "Cape Town Int. Airport (CPT)"
+      },
+      {
+        "location": "Bram Fischer Int. Airport (BFN)"
+      },
+      {
+        "location": "East London Airport (ELS)"
+      },
+      {
+        "location": "George Airport (GRJ)"
+      },
+      {
+        "location": "King Shaka Int. Airport (DUR)"
+      },
+      {
+        "location": "Port Elizabeth Int. Airport (PLZ)"
+      },
+      {
+        "location": "Victoria Falls Int. Airport (VFA)"
+      },
+      {
+        "location": "Harare Int. Airport (HRE)"
+      },
+      {
+        "location": "Maputo Int. Airport (MPM)"
+      },
+      {
+        "location": "Mauritius Int. Airport (MRU)"
+      },
+      {
+        "location": "Zanzibar Int. Airport (ZNZ)"
+      }
+    ]
+  },
+  {
+    "location": "Victoria Falls Int. Airport (VFA)",
+    "isAvailable": true,
+    "AirplaneType": "B747",
+    "routes": [
+      {
+        "location": "O.R Tambo Int. Airport (JNB)"
+      }
+    ]
+  },
+  {
+    "location": "Harare Int. Airport (HRE)",
+    "isAvailable": true,
+    "AirplaneType": "B747",
+    "routes": [
+      {
+        "location": "O.R Tambo Int. Airport (JNB)"
+      }
+    ]
+  },
+  {
+    "location": "Maputo Int. Airport (MPM)",
+    "isAvailable": true,
+    "AirplaneType": "B747",
+    "routes": [
+      {
+        "location": "O.R Tambo Int. Airport (JNB)"
+      }
+    ]
+  },
+  {
+    "location": "Mauritius Int. Airport (MRU)",
+    "isAvailable": true,
+    "AirplaneType": "B747",
+    "routes": [
+      {
+        "location": "O.R Tambo Int. Airport (JNB)"
+      }
+    ]
+  },
+  {
+    "location": "Port Elizabeth Int. Airport (PLZ)",
+    "isAvailable": true,
+    "AirplaneType": "B747",
+    "routes": [
+      {
+        "location": "O.R Tambo Int. Airport (JNB)"
+      },
+      {
+        "location": "Cape Town Int. Airport (CPT)"
+      },
+      {
+        "location": "King Shaka Int. Airport (DUR)"
+      }
+    ]
+  }
+]

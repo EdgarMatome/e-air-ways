@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { FlightRoutesActions } from '../store/actions';
 
 @Component({
   selector: 'app-trip-search-controller',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TripSearchControllerComponent implements OnInit {
 
-  constructor() { }
+  constructor(protected _store: Store) { }
 
   ngOnInit(): void {
+    this._store.dispatch(FlightRoutesActions.loadRoutes())
   }
 
 }

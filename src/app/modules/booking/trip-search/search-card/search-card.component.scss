@@ -52,6 +52,7 @@
 }
 
 ::ng-deep label {
+  text-align: center;
   color: #000;
 }
 
@@ -107,6 +108,7 @@
   color: #000 !important;
 }
 ::ng-deep .mdc-floating-label {
+  align-items: center !important;
   color: #000 !important;
 }
 ::ng-deep .mat-form-field-label span {
@@ -138,9 +140,9 @@
   color: #000 !important;
 }
 
-::ng-deep .departDt {
+::ng-deep {
   .oneway {
-    .mat-form-field-wrapper {
+    .mat-mdc-text-field-wrapper {
       width: 260px !important;
       border-top-right-radius: 8px !important;
       border-bottom-right-radius: 8px !important;
@@ -189,8 +191,8 @@
 }
 
 ::ng-deep .isOneWay {
-  position: relative !important;
-  left: 86px !important;
+  position: absolute !important;
+  left: 448px !important;
 }
 
 ::ng-deep .passenger-class {

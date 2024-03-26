@@ -1,15 +1,10 @@
-.date-wrapper {
-  display: inline-flex !important;
+// .date-wrapper {
+//   display: inline-flex !important;
+// }
+
+::ng-deep .mat-mdc-card {
+  background-color: #fff !important;
 }
-
-::ng-deep .ps-quantity {
-  // left: 132px !important;
-
-  .mat-form-field-wrapper {
-    width: 132px !important;
-  }
-}
-
 // TODO: rEMOVED RADIUS ON CLASS LEVELS AND ADD BORDER IN BERTWEEN
 
 // .passenger-class {
@@ -25,31 +20,58 @@
 .mat-radio-button ~ .mat-radio-button {
   margin-left: 16px;
 }
-
-::ng-deep .mat-radio-outer-circle {
-  border: 1px solid gray;
+::ng-deep .mdc-radio__outer-circle {
+  // border: 5px solid red !important;
+  border: 2px solid gray !important;
 }
 
-::ng-deep .mat-radio-checked .mat-radio-inner-circle {
+::ng-deep .mdc-radio__background .mdc-radio__inner-circle {
+  border: 5px;
   background-color: #111f44 !important;
 }
 
-// .dep-destination {
-//   margin-left: 150px;
-// }
+::ng-deep .mdc-menu-surface--open {
+  max-height: 100% !important;
+  background-color: #fff;
+}
 
-::ng-deep .mat-form-field-wrapper {
+::ng-deep .mat-mdc-option {
+  border-bottom: 1px solid #d4d4d48a;
+  .mdc-list-item__primary-text {
+    color: #000 !important;
+  }
+}
+
+::ng-deep .mat-mdc-option:hover {
+  background-color: rgb(192, 192, 192) !important;
+}
+
+::ng-deep .mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
+.mat-primary .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
+  color: #0a0a0a;
+}
+
+::ng-deep label {
+  color: #000;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
   background-color: rgb(216, 216, 216) !important;
-  padding: 10px !important;
+  padding: 5px !important;
   border-radius: 8px;
-  width: 260px;
+  width: 200px;
   // margin-left: 35px;
   // margin-top: 25px;
   margin: 25px 0 0 34px;
 }
 
+.from {
+  width: 260px !important;
+}
+
 ::ng-deep .to {
   // margin-left: -35px;
+  width: 260px !important;
   right: 37px;
 }
 
@@ -57,7 +79,7 @@
   // margin-left: 50px !important;
   // margin-right: 45px !important;
   color: #000 !important;
-  margin: 0 44px 0 44px;
+  margin: 0 44px 0 95px;
   font-size: 33px !important;
 }
 
@@ -84,7 +106,7 @@
 ::ng-deep .mat-form-field-hint-wrapper {
   color: #000 !important;
 }
-::ng-deep .mat-form-field-label {
+::ng-deep .mdc-floating-label {
   color: #000 !important;
 }
 ::ng-deep .mat-form-field-label span {
@@ -96,15 +118,23 @@
 }
 ::ng-deep .mat-datepicker-toggle {
   margin-right: -6px;
+  color: #000;
 }
+
 ::ng-deep .mat-icon-button {
   color: #000 !important;
 }
 
-::ng-deep .mat-select-value {
+::ng-deep .mat-mdc-select-arrow {
+  color: #000 !important;
+  margin-right: 5px;
+}
+
+::ng-deep .mat-mdc-select-value {
   color: #000 !important;
 }
-::ng-deep .mat-select-placeholder .mat-select-min-line {
+::ng-deep .mat-mdc-select-placeholder {
+  margin-left: 10px;
   color: #000 !important;
 }
 
@@ -119,17 +149,29 @@
   }
 }
 
-::ng-deep .departDt {
-  .mat-form-field-wrapper {
-    width: 130px !important;
-  }
-
+::ng-deep {
   .depart-inner {
-    .mat-form-field-wrapper {
+    width: 130px !important;
+    .mat-mdc-text-field-wrapper {
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
       border-right: 2px solid #9e9999;
     }
+  }
+  .returnDt {
+    width: 130px !important;
+    // position: relative;
+    // right: 34px;
+    // .mat-mdc-text-field-wrapper {
+    //   border-top-left-radius: 0px !important;
+    //   border-bottom-left-radius: 0px !important;
+    // }
+  }
+}
+
+::ng-deep .departDt {
+  .mat-form-field-wrapper {
+    width: 130px !important;
   }
 
   .returnDt {
@@ -146,11 +188,30 @@
   }
 }
 
+::ng-deep .isOneWay {
+  position: relative !important;
+  left: 86px !important;
+}
+
+::ng-deep .passenger-class {
+  position: absolute;
+  left: 449px;
+  bottom: 45px;
+}
+
+::ng-deep .ps-quantity {
+  // left: 132px !important;
+
+  .mat-mdc-text-field-wrapper {
+    width: 132px !important;
+  }
+}
+
 ::ng-deep .ps-level {
   position: relative;
   right: 38px;
 
-  .mat-form-field-wrapper {
+  .mat-mdc-text-field-wrapper {
     width: 130px !important;
     border-left: 2px solid #9e9999;
     border-top-left-radius: 0px;
@@ -158,25 +219,8 @@
   }
 }
 
-::ng-deep .isOneWay {
-  position: relative !important;
-  left: 86px !important;
-}
-
-::ng-deep .passenger-class {
-  position: relative;
-  /* top: -88px; */
-  // bottom: 94px;
-  /* right: 50px; */
-  left: 52px;
-
-  // .mat-form-field-wrapper {
-  //   height: 69px;
-  // }
-}
-
 ::ng-deep .search {
   position: absolute;
-  bottom: 84px;
-  left: 752px;
+  bottom: 136px;
+  left: 791px;
 }

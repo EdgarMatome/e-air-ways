@@ -7,6 +7,10 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { TripSearchStoreModule } from './modules/booking/trip-search/store/store.module';
+import { BookingModule } from './modules/booking/booking.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { StoreModule } from '@ngrx/store';
     CoreModule,
     SharedModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    TripSearchStoreModule,
+    BookingModule,
+    StoreDevtoolsModule.instrument({ maxAge: 200 }),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,7 +13,7 @@
   </mat-card-header>
   <mat-card-content>
     <div class="dep-destination">
-      <mat-form-field>
+      <mat-form-field class="from">
         <!-- <mat-label class="mat-lab">From</mat-label> -->
         <mat-select [placeholder]="depature">
           <mat-option *ngFor="let dep of depatures" [value]="dep.name">
@@ -31,8 +31,8 @@
         </mat-select>
       </mat-form-field>
 
-      <div class="date-wrapper">
-        <div class="departDt">
+      <div class="date-wrapperzzzz">
+        <div class="departDat">
           <mat-form-field
             class="depart-inner"
             [ngClass]="{ oneway: isOneWayTrip }"

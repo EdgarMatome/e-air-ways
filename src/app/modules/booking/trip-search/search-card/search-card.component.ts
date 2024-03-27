@@ -1,4 +1,8 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { FlightRoutesSelectors } from '../store/selectors';
+import { map } from 'rxjs/operators';
+import { TravelRoutes } from '../models/routes';
 
 @Component({
   selector: 'app-search-card',
@@ -6,24 +10,9 @@ import { Component, ElementRef, OnInit } from '@angular/core';
   styleUrls: ['./search-card.component.scss']
 })
 export class SearchCardComponent implements OnInit {
+  flightRoutes$ = this._store.pipe(select(FlightRoutesSelectors.selectFlightRoutes));
+  depatures: TravelRoutes[] = [];
 
-  depatures: any = [
-    {
-      name: 'Cape Town Int',
-      date: '12-12-2024',
-      available: true
-    },
-    {
-      name: 'Durban Int',
-      date: '12-12-2024',
-      available: true
-    },
-    {
-      name: 'OR Tambo Int',
-      date: '12-12-2024',
-      available: true
-    },
-  ];
   destinations: any = [
     {
       name: 'Cape Town Int',
@@ -55,9 +44,16 @@ export class SearchCardComponent implements OnInit {
   // tripType = 'oneway'
   // dstinations: any = ['Cape Town Int', 'Durban Int', 'OR Tambo Int']
 
-  constructor(private elementRef: ElementRef) { }
+
+  constructor(private elementRef: ElementRef,
+    protected _store: Store) { }
 
   ngOnInit(): void {
+
+    this.flightRoutes$.pipe(map(flightRoutes => {
+      console.log('Flight Routes', flightRoutes);
+    })).subscribe();
+
     if (this.elementRef) {
       this.elementRef.nativeElement.focus();
     }

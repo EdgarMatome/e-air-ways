@@ -1,20 +1,15 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { TravelRoutes } from '../../../models/routes';
+import { TravelRoutes } from '../../models/routes';
 import { FlightRoutesActions } from '../actions';
 
-export const stateKey = 'flightRoutes';
+export const stateKey = 'example';
 
 export interface State {
-  travelRoutes: TravelRoutes;
+  travelRoutes: TravelRoutes[];
 }
 
 export const initialState: State = {
-  travelRoutes: {
-    location: '',
-    isAvailable: false,
-    AirplaneType: '',
-    routes: []
-  }
+  travelRoutes: []
 };
 
 export const flightRoutesReducer = createReducer(initialState,

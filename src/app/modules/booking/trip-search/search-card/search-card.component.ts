@@ -13,23 +13,7 @@ export class SearchCardComponent implements OnInit {
   flightRoutes$ = this._store.pipe(select(FlightRoutesSelectors.selectFlightRoutes));
   depatures: TravelRoutes[] = [];
 
-  destinations: any = [
-    {
-      name: 'Cape Town Int',
-      date: '12-12-2024',
-      available: true
-    },
-    {
-      name: 'Durban Int',
-      date: '12-12-2024',
-      available: true
-    },
-    {
-      name: 'OR Tambo Int',
-      date: '12-12-2024',
-      available: true
-    },
-  ];
+  destinations: any[] = [];
   passengerQt: number[] = [1, 2, 3, 4, 5, 6]
   classLevel: string[] = ['Economy', 'First Class', 'Business', 'Premium']
   passengerPlaceholder = 'Passengers'
@@ -51,13 +35,40 @@ export class SearchCardComponent implements OnInit {
   ngOnInit(): void {
 
     this.flightRoutes$.pipe(map(flightRoutes => {
-      console.log('Flight Routes', flightRoutes);
+      console.warn('Flight Routes', flightRoutes);
+      this.depatures = flightRoutes;
+      this.destinations = flightRoutes;
     })).subscribe();
 
     if (this.elementRef) {
       this.elementRef.nativeElement.focus();
     }
   }
+
+  setDepature(event: any): void {
+    this.depatures.filter(x => {
+      if (x.location === event.value) {
+        this.destinations = x.routes
+        console.warn('Depature event', x);
+      }
+    })
+    //   if (event.value === x) {
+    //     this.destinations = x.routes
+    //   }
+  }
+
+  setDestination(event: any): void {
+    this.destinations.filter(x => {
+      if (x.location === event.value) {
+        this.depatures = x.routes
+        console.warn('Depature event', x);
+      }
+    })
+  }
+
+  // setTripRoute(trip: any){
+  //   if(trip === );
+  // }
 
   selectTrip(event: any): void {
     console.log('Event', event)

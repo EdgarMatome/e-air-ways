@@ -18,7 +18,7 @@ export class FlightRoutesEffects {
           map((response) => {
             console.log('ttttt', response)
             return FlightRoutesActions.loadRoutesSuccess({
-              travelRoutes: response as any
+              travelRoutes: response as TravelRoutes[]
             })
           }
           ),

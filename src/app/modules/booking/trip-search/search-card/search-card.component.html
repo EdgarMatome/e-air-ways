@@ -15,7 +15,10 @@
     <div class="dep-destination">
       <mat-form-field class="from">
         <!-- <mat-label class="mat-lab">From</mat-label> -->
-        <mat-select [placeholder]="depature">
+        <mat-select
+          [placeholder]="depature"
+          (selectionChange)="setDepature($event)"
+        >
           <mat-option *ngFor="let dep of depatures" [value]="dep.location">
             {{ dep.location }}</mat-option
           >
@@ -24,9 +27,12 @@
       <span class="material-icons"> sync_alt </span>
       <mat-form-field class="to">
         <!-- <mat-label class="mat-lab">From</mat-label> -->
-        <mat-select [placeholder]="destination">
-          <mat-option *ngFor="let des of destinations" [value]="des.name">
-            {{ des.name }}</mat-option
+        <mat-select
+          [placeholder]="destination"
+          (selectionChange)="setDestination($event)"
+        >
+          <mat-option *ngFor="let des of destinations" [value]="des.location">
+            {{ des.location }}</mat-option
           >
         </mat-select>
       </mat-form-field>

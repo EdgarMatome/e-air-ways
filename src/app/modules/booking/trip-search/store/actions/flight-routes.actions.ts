@@ -7,5 +7,5 @@ export const loadRoutes = createAction(
 
 export const loadRoutesSuccess = createAction(
   '[Flight-Routes] load routes success',
-  props<{ travelRoutes: TravelRoutes[] }>()
+  props<{ travelRoutes: any }>()
 )

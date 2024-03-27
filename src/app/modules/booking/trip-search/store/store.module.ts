@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
     StoreRootModule,
     EffectsRootModule,
     StoreFeatureModule,
-    StoreModule.forFeature('store', flightRoutesReducer),
+    StoreModule.forFeature('store', flightRoutesReducer.flightRoutes),
     EffectsModule.forFeature([FlightRoutesEffects]),
     EffectsFeatureModule,
   ]

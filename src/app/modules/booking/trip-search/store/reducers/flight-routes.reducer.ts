@@ -2,7 +2,7 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { TravelRoutes } from '../../models/routes';
 import { FlightRoutesActions } from '../actions';
 
-export const stateKey = 'example';
+export const stateKey = 'flightRoutes';
 
 export interface State {
   travelRoutes: TravelRoutes[];

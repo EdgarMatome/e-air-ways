@@ -11,7 +11,7 @@ import { TripSearchSummaryComponent } from './trip-search/trip-search-summary/tr
 import { SearchCardComponent } from './trip-search/search-card/search-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule } from '@angular/material/radio';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -42,6 +42,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatListModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    ReactiveFormsModule,
   ],
 })
 export class BookingModule { }

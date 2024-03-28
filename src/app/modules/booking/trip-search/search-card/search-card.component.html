@@ -13,86 +13,100 @@
   </mat-card-header>
   <mat-card-content>
     <div class="dep-destination">
-      <mat-form-field class="from">
-        <!-- <mat-label class="mat-lab">From</mat-label> -->
-        <mat-select
-          [placeholder]="depature"
-          (selectionChange)="setDepature($event)"
-        >
-          <mat-option *ngFor="let dep of depatures" [value]="dep.location">
-            {{ dep.location }}</mat-option
+      <form [formGroup]="searchForm">
+        <mat-form-field class="from">
+          <mat-select
+            [placeholder]="depature"
+            formControlName="departure"
+            (selectionChange)="setDepature($event)"
           >
-        </mat-select>
-      </mat-form-field>
-      <span class="material-icons"> sync_alt </span>
-      <mat-form-field class="to">
-        <!-- <mat-label class="mat-lab">From</mat-label> -->
-        <mat-select
-          [placeholder]="destination"
-          (selectionChange)="setDestination($event)"
-        >
-          <mat-option *ngFor="let des of destinations" [value]="des.location">
-            {{ des.location }}</mat-option
+            <mat-option *ngFor="let dep of depatures" [value]="dep.location">
+              {{ dep.location }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+        <span class="material-icons"> sync_alt </span>
+        <mat-form-field class="to">
+          <mat-select
+            [placeholder]="destination"
+            formControlName="destination"
+            (selectionChange)="setDestination($event)"
           >
-        </mat-select>
-      </mat-form-field>
+            <mat-option *ngFor="let des of destinations" [value]="des.location">
+              {{ des.location }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
 
-      <div class="date-wrapperzzzz">
-        <div class="departDat">
-          <mat-form-field
-            class="depart-inner"
-            [ngClass]="{ oneway: isOneWayTrip }"
-            appearance="fill"
-          >
-            <mat-label>Depart</mat-label>
-            <input matInput [matDatepicker]="picker" />
-            <mat-datepicker-toggle
-              matSuffix
-              [for]="picker"
-            ></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-          <mat-form-field
-            class="returnDt"
-            *ngIf="!isOneWayTrip"
-            appearance="fill"
-          >
-            <mat-label>Return</mat-label>
-            <input matInput [matDatepicker]="picker1" />
-            <mat-datepicker-toggle
-              matSuffix
-              [for]="picker1"
-            ></mat-datepicker-toggle>
-            <mat-datepicker #picker1></mat-datepicker>
-          </mat-form-field>
-        </div>
-        <!-- <div class="returnDt">
-        </div> -->
+        <div class="date-wrapperzzzz">
+          <div class="departDat">
+            <mat-form-field
+              class="depart-inner"
+              [ngClass]="{ oneway: isOneWayTrip }"
+              appearance="fill"
+            >
+              <mat-label>Depart</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                formControlName="departDate"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field
+              class="returnDt"
+              *ngIf="!isOneWayTrip"
+              appearance="fill"
+            >
+              <mat-label>Return</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker1"
+                formControlName="returnDate"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker1"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
 
-        <div class="passenger-class" [ngClass]="{ isOneWay: isOneWayTrip }">
-          <mat-form-field class="ps-quantity">
-            <mat-select [placeholder]="passengerPlaceholder">
-              <mat-option
-                *ngFor="let passenger of passengerQt"
-                [value]="passenger"
+          <div class="passenger-class" [ngClass]="{ isOneWay: isOneWayTrip }">
+            <mat-form-field class="ps-quantity">
+              <mat-select
+                [placeholder]="passengerPlaceholder"
+                formControlName="passengerQuantity"
               >
-                {{ passenger }}</mat-option
+                <mat-option
+                  *ngFor="let passenger of passengerQt"
+                  [value]="passenger"
+                >
+                  {{ passenger }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="ps-level">
+              <mat-select
+                [placeholder]="classLevelPlHolder"
+                formControlName="classLevel"
               >
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field class="ps-level">
-            <mat-select [placeholder]="classLevelPlHolder">
-              <mat-option *ngFor="let class of classLevel" [value]="class">
-                {{ class }}</mat-option
-              >
-            </mat-select>
-          </mat-form-field>
+                <mat-option *ngFor="let class of classLevel" [value]="class">
+                  {{ class }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
 
     <div class="search">
-      <button class="btn primary btn-lg">Search</button>
+      <button class="btn primary btn-lg" (click)="search()">Search</button>
     </div>
   </mat-card-content>
 </mat-card>

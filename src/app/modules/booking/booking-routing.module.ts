@@ -20,7 +20,7 @@ const routes: Routes = [
     component: TripSearchControllerComponent
   },
   {
-    path: 'flights',
+    path: 'booking/flights',
     component: FlightsComponent
   }
 ];

@@ -18,6 +18,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FlightCardComponent } from './flights/flight-card/flight-card.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     FlightSearchComponent,
     TripSearchSummaryComponent,
     SearchCardComponent,
+    FlightCardComponent,
   ],
   imports: [
     CommonModule,

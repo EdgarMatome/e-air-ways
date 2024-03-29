@@ -4,6 +4,7 @@ import { FlightRoutesSelectors } from '../store/selectors';
 import { map } from 'rxjs/operators';
 import { TravelRoutes } from '../models/routes';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-card',
@@ -34,7 +35,8 @@ export class SearchCardComponent implements OnInit {
 
 
   constructor(
-    private elementRef: ElementRef,
+    private _elementRef: ElementRef,
+    protected _router: Router,
     protected _store: Store,
   ) { }
 
@@ -47,8 +49,8 @@ export class SearchCardComponent implements OnInit {
       this.destinations = flightRoutes;
     })).subscribe();
 
-    if (this.elementRef) {
-      this.elementRef.nativeElement.focus();
+    if (this._elementRef) {
+      this._elementRef.nativeElement.focus();
     }
 
     this.searchForm = new FormGroup({
@@ -85,10 +87,6 @@ export class SearchCardComponent implements OnInit {
     })
   }
 
-  // setTripRoute(trip: any){
-  //   if(trip === );
-  // }
-
   selectTrip(event: any): void {
     console.log('Event', event)
     if (event.value === 'One-Way') {
@@ -101,6 +99,7 @@ export class SearchCardComponent implements OnInit {
   search(): void {
     const formValues = this.searchForm.getRawValue();
     console.warn('Raw Form Values', formValues);
+    this._router.navigate(['/booking/flights']);
   }
 
 }

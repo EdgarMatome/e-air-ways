@@ -2,5 +2,38 @@
   ul li {
     list-style-type: none;
     display: inline;
+    // float: left;
+    text-align: left;
+    // margin-right: 10px;
+  }
+  ul li:not(:last-child) {
+    margin-right: 20px;
+  }
+  .summary-trip {
+    font-weight: bold;
+  }
+}
+
+.promotion-column:not(:last-child) {
+  border-right: 1px solid gray;
+}
+
+.promotion-column:first-child {
+  background-color: rgba(0, 255, 255, 0.436);
+}
+
+.promotion-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .icon-text-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .material-icons {
+    color: rgb(38, 165, 224);
+    float: left;
   }
 }

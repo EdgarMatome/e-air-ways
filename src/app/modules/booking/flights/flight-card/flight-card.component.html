@@ -1,17 +1,41 @@
 <div class="container">
   <div class="summary">
     <ul>
-      <li>CPT - JNB</li>
-      <li>Date</li>
-      <li>1 Adult</li>
+      <li class="summary-trip">CPT - JNB</li>
+      <li class="summary-date">
+        <span class="material-icons">date_range</span> 27 Dec
+      </li>
+      <li class="passengers">1 Adult</li>
     </ul>
   </div>
   <mat-card>
     <mat-card-content class="card">
       <div class="row">
-        <div class="col-md-4">Recommended</div>
-        <div class="col-md-4">Cheapest</div>
-        <div class="col-md-4">Promotion</div>
+        <div class="col-md-4 promotion-column">
+          <!-- <span class="material-icons">check_circle</span>Recommended
+          <span class="promotion-recommended">R1456</span> -->
+
+          <div class="icon-text-wrapper">
+            <span class="material-icons">check_circle</span>
+            <span>Recommended</span>
+          </div>
+          <span class="promotion-recommended">R1456</span>
+        </div>
+        <div class="col-md-4 promotion-column">
+          <div class="icon-text-wrapper">
+            <span class="material-icons">check_circle</span>
+            <span>Cheapest</span>
+          </div>
+          <span class="promotion-recommended">R1456</span>
+        </div>
+
+        <div class="col-md-4 promotion-column">
+          <div class="icon-text-wrapper">
+            <span class="material-icons">account_balance_wallet</span>
+            <span>Promotion</span>
+          </div>
+          <span class="promotion-recommended">R1456</span>
+        </div>
         <!-- <div class="col-md-3"></div> -->
       </div>
     </mat-card-content>

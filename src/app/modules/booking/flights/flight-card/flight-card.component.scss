@@ -12,21 +12,22 @@
   ul li:not(:last-child) {
     margin-right: 20px;
   }
-  .summary-trip {
+
+  &_trip {
     font-weight: bold;
   }
 
-  .summary-date-icon {
+  &_date-icon {
     position: relative;
     top: 5px;
   }
 }
 
-.mat-mdc-card-content:last-child {
+.promotion-card-inner:last-child {
   padding-bottom: 5px !important;
 }
 
-.mat-mdc-card-content:last-child {
+.promotion-card-inner:last-child {
   padding-top: 5px !important;
 }
 
@@ -46,6 +47,7 @@
 
   &_price {
     font-size: 17px;
+    font-weight: 400;
   }
 }
 
@@ -66,5 +68,83 @@
   .material-icons {
     color: rgb(30, 41, 94);
     float: left;
+  }
+}
+
+.flight-route-card {
+  margin-top: 40px;
+  &_header {
+    padding: 0;
+    display: block;
+    border-bottom: 1px solid #000;
+  }
+
+  &_duration {
+    padding-left: 16px;
+    border-bottom: 1px solid #000;
+    color: rgb(255, 255, 255);
+    background-color: #9ad3f2;
+  }
+
+  &_date {
+    display: flex;
+    padding-left: 16px;
+    color: rgb(0, 0, 0);
+    background-color: #d9d9d9;
+    h6 {
+      margin-right: 5px;
+    }
+  }
+}
+
+.flight-route-card-body {
+  padding: 20px;
+  &_price {
+    display: flex;
+    flex-direction: column;
+
+    .flight-price {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .price-text {
+      font-size: 16px;
+    }
+  }
+
+  &_departure-time {
+    display: flex;
+    flex-direction: column;
+
+    .flight-time {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .depature-text {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  &_icon {
+    transform: rotate(90deg);
+    text-align: center;
+  }
+
+  &_destination-time {
+    display: flex;
+    flex-direction: column;
+
+    .destination-time {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .destination-text {
+      font-size: 20px;
+      font-weight: 500;
+    }
   }
 }

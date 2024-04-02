@@ -1,15 +1,15 @@
 <div class="container">
   <div class="summary">
     <ul>
-      <li class="summary-trip">CPT - JNB</li>
-      <li class="summary-date">
-        <span class="material-icons summary-date-icon">date_range</span> 27 Dec
+      <li class="summary_trip">CPT - JNB</li>
+      <li class="summary_date">
+        <span class="material-icons summary_date-icon">date_range</span> 27 Dec
       </li>
-      <li class="passengers">1 Adult</li>
+      <li class="summary_passengers">1 Adult</li>
     </ul>
   </div>
-  <mat-card>
-    <mat-card-content class="card">
+  <mat-card class="promotion-card">
+    <mat-card-content class="card promotion-card-inner">
       <div class="row">
         <div class="col-md-4 promotion-column">
           <div class="icon-text-wrapper">
@@ -36,6 +36,40 @@
           <span class="promotion-recommended promotion-text_price">R1456</span>
         </div>
         <!-- <div class="col-md-3"></div> -->
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <!-- Main card -->
+  <mat-card class="card flight-route-card">
+    <mat-card-header class="flight-route-card_header">
+      <div class="flight-route-card_duration pt-2 pb-2">
+        <span>5hrs 30min</span>
+      </div>
+      <div class="flight-route-card_date pt-2">
+        <h6>Depature</h6>
+        <span> Fri 26 Dec </span>
+      </div>
+    </mat-card-header>
+    <mat-card-content class="flight-route-card-body">
+      <div class="row">
+        <div class="col-md-2 flight-route-card-body_price">
+          <span class="flight-price mb-2">R3158</span>
+          <span class="price-text">Price per Adult</span>
+        </div>
+        <div class="col-md-2 flight-route-card-body_departure-time">
+          <span class="flight-time">8:00</span>
+          <span class="depature-text">Cape Town</span>
+        </div>
+        <div class="col-md-2 flight-route-card-body_icon">
+          <span class="material-icons">flight</span>
+        </div>
+        <div class="col-md-2 flight-route-card-body_destination-time">
+          <span class="destination-time">17:00</span
+          ><span class="destination-text">Cape Verde</span>
+        </div>
+        <div class="col-md-2 flight-route-card-body_button">
+          <button class="primary">Book</button>
+        </div>
       </div>
     </mat-card-content>
   </mat-card>

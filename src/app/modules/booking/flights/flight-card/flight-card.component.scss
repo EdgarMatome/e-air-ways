@@ -73,6 +73,7 @@
 
 .flight-route-card {
   margin-top: 40px;
+  margin-bottom: 20px;
   &_header {
     padding: 0;
     display: block;
@@ -80,7 +81,8 @@
   }
 
   &_duration {
-    padding-left: 16px;
+    font-weight: 500;
+    padding-left: 90px;
     border-bottom: 1px solid #000;
     color: rgb(255, 255, 255);
     background-color: #9ad3f2;
@@ -88,7 +90,7 @@
 
   &_date {
     display: flex;
-    padding-left: 16px;
+    padding-left: 90px;
     color: rgb(0, 0, 0);
     background-color: #d9d9d9;
     h6 {
@@ -99,6 +101,11 @@
 
 .flight-route-card-body {
   padding: 20px;
+
+  &_wrapper {
+    padding-left: 70px;
+  }
+
   &_price {
     display: flex;
     flex-direction: column;
@@ -131,6 +138,9 @@
   &_icon {
     transform: rotate(90deg);
     text-align: center;
+    position: relative;
+    right: 50px;
+    margin: 0 20px;
   }
 
   &_destination-time {
@@ -145,6 +155,23 @@
     .destination-text {
       font-size: 20px;
       font-weight: 500;
+    }
+  }
+
+  &_button {
+    padding: 0;
+    display: flex;
+    margin-left: 20px;
+    &_flightNo {
+      font-size: 15px;
+      font-weight: 500;
+      padding-right: 30px;
+      position: relative;
+      top: 10px;
+    }
+
+    .primary:hover {
+      border-color: #000;
     }
   }
 }

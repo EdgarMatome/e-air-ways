@@ -57,6 +57,10 @@
     }
   ],
   "special&Promotions": [
-    {}
+    {
+      "recommended": 1456.00,
+      "cheapest": 1250.00,
+      "promotion": 1300.00
+    }
   ]
 }

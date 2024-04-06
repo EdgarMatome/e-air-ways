@@ -5,9 +5,7 @@
   ul li {
     list-style-type: none;
     display: inline;
-    // float: left;
     text-align: left;
-    // margin-right: 10px;
   }
   ul li:not(:last-child) {
     margin-right: 20px;
@@ -50,10 +48,6 @@
     font-weight: 400;
   }
 }
-
-// .promotion-column:first-child {
-//   background-color: rgba(0, 255, 255, 0.436);
-// }
 
 .promotion-column {
   display: flex;

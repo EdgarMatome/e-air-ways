@@ -61,8 +61,6 @@
   padding: 5px !important;
   border-radius: 8px;
   width: 200px;
-  // margin-left: 35px;
-  // margin-top: 25px;
   margin: 25px 0 0 34px;
 }
 
@@ -71,31 +69,23 @@
 }
 
 ::ng-deep .to {
-  // margin-left: -35px;
   width: 260px !important;
   right: 37px;
 }
 
 .arrows-icon {
-  // margin-left: 50px !important;
-  // margin-right: 45px !important;
   color: #000 !important;
   margin: 0 44px 0 95px;
   font-size: 33px !important;
 }
 
-// ::ng-deep .mat-select {
-//   color: #000 !important;
-// }
 ::ng-deep .mat-select-arrow-wrapper {
   color: #000 !important;
 }
 ::ng-deep .mat-select-arrow {
   color: #000 !important;
 }
-// ::ng-deep .mat-select-placeholder .mat-select-min-line {
-//   color: #000 !important;
-// }
+
 ::ng-deep .mat-form-field-underline {
   background-color: #000000 !important;
   width: 240px !important;

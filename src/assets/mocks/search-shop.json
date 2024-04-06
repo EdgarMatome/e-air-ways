@@ -37,7 +37,7 @@
       "departureDateTime": "2024-04-08T09:20:00",
       "arrivalDateTime": "2024-04-08T14:20:00",
       "price": 1750.25,
-      "seatAvailability": "Last-minute deals available"
+      "seatAvailability": ""
     },
     {
       "carrierCode": "FA",
@@ -45,7 +45,7 @@
       "departureDateTime": "2024-04-08T13:50:00",
       "arrivalDateTime": "2024-04-08T18:50:00",
       "price": 2050.00,
-      "seatAvailability": "Few seats left at this price"
+      "seatAvailability": ""
     },
     {
       "carrierCode": "FA",
@@ -53,7 +53,7 @@
       "departureDateTime": "2024-04-08T17:20:00",
       "arrivalDateTime": "2024-04-08T22:20:00",
       "price": 1932.50,
-      "seatAvailability": "Book now for best price"
+      "seatAvailability": ""
     }
   ],
   "special&Promotions": [

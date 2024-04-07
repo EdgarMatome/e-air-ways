@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { TravelRoutes } from '../models/routes';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FlightRoutesActions } from '../store/actions';
 
 @Component({
   selector: 'app-search-card',
@@ -24,10 +25,10 @@ export class SearchCardComponent implements OnInit {
   classLevelPlHolder = 'Class'
   depature = 'Depature Airport'
   destination = 'Arrival Airport'
-  selectedTravelType: string = 'Return';
+  selectedTravelType: string = 'return';
   travelType: string[] = ['Return', 'One-Way', 'Multi-Way'];
 
-  selectedRadio = 'Return'
+  selectedRadio = 'return'
   isOneWayTrip = false;
   searchForm!: FormGroup;
   // tripType = 'oneway'
@@ -54,7 +55,7 @@ export class SearchCardComponent implements OnInit {
     }
 
     this.searchForm = new FormGroup({
-      selectedTravelType: new FormControl([{ value: '' }]),
+      selectedTravelType: new FormControl(),
       departure: new FormControl([{ value: '' }, Validators.required]),
       destination: new FormControl([{ value: '' }, Validators.required]),
       departDate: new FormControl([{ value: '' }, Validators.required]),
@@ -88,7 +89,8 @@ export class SearchCardComponent implements OnInit {
   }
 
   selectTrip(event: any): void {
-    console.log('Event', event)
+    console.log('Event', event);
+    this.selectedTravelType = event.value;
     if (event.value === 'One-Way') {
       this.isOneWayTrip = true;
     } else {
@@ -97,8 +99,10 @@ export class SearchCardComponent implements OnInit {
   }
 
   search(): void {
+    this.searchForm.controls['selectedTravelType'].setValue(this.selectedTravelType);
     const formValues = this.searchForm.getRawValue();
     console.warn('Raw Form Values', formValues);
+    this._store.dispatch(FlightRoutesActions.searchFlights({ searchData: formValues }));
     this._router.navigate(['/booking/flights']);
   }
 

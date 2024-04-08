@@ -6,12 +6,12 @@ export const stateKey = 'flightRoutes';
 
 export interface State {
   travelRoutes: TravelRoutes[];
-  tripData: any;
+  flights: any;
 }
 
 export const initialState: State = {
   travelRoutes: [],
-  tripData: []
+  flights: []
 };
 
 export const flightRoutesReducer = createReducer(initialState,
@@ -21,7 +21,7 @@ export const flightRoutesReducer = createReducer(initialState,
   ),
   on(
     FlightRoutesActions.searchFlightsSuccess,
-    (state, { tripData }): State => ({ ...state, tripData })
+    (state, { flights }): State => ({ ...state, flights })
   )
 )
 // export const reducer = (state: State | undefined, action: Action): State => flightRoutesReducer(state, action);

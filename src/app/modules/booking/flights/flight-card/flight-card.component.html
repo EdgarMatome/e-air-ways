@@ -40,7 +40,7 @@
     </mat-card-content>
   </mat-card>
   <!-- Main card -->
-  <mat-card class="card flight-route-card">
+  <mat-card class="card flight-route-card" *ngFor="let flight of flights">
     <mat-card-header class="flight-route-card_header">
       <div class="flight-route-card_duration pt-2 pb-2">
         <span>5hrs 30min</span>
@@ -53,22 +53,24 @@
     <mat-card-content class="flight-route-card-body">
       <div class="row flight-route-card-body_wrapper">
         <div class="col-md-2 flight-route-card-body_price">
-          <span class="flight-price mb-2">R3158</span>
-          <span class="price-text">Price goes up soon</span>
+          <span class="flight-price mb-2">{{ flight.price }}</span>
+          <span class="price-text">{{ flight.seatAvailability }}</span>
         </div>
         <div class="col-md-2 flight-route-card-body_departure-time">
-          <span class="flight-time">8:00</span>
+          <span class="flight-time">{{ flight.departureDateTime }}</span>
           <span class="depature-text">Cape Town</span>
         </div>
         <div class="col-md-1 flight-route-card-body_icon">
           <span class="material-icons">flight</span>
         </div>
         <div class="col-md-2 flight-route-card-body_destination-time">
-          <span class="destination-time">17:00</span
+          <span class="destination-time">{{ flight.arrivalDateTime }}</span
           ><span class="destination-text">Cape Verde</span>
         </div>
         <div class="col-md-3 flight-route-card-body_button">
-          <span class="flight-route-card-body_button_flightNo">FAE95</span>
+          <span class="flight-route-card-body_button_flightNo">{{
+            flight.carrierCode + flight.flightNumber
+          }}</span>
           <button class="btn primary">Book</button>
         </div>
       </div>

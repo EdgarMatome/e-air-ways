@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, act, createEffect, ofType } from '@ngrx/effects';
 import { FlightRoutesActions } from '../actions';
 import { map, mergeMap } from 'rxjs';
-import { TripSearchService } from '../../services/trip-search.services';
+import { TripSearchService } from '../../services/trip-search.service';
 import { TravelRoutes } from '../../models/routes';
 
 
@@ -34,7 +34,7 @@ export class FlightRoutesEffects {
       mergeMap((action) => this._tripSearchSvc.getTripFlights(action.searchData).pipe(
         map((response) => {
           console.warn('Woooow flights data', response);
-          return FlightRoutesActions.searchFlightsSuccess({ tripData: response });
+          return FlightRoutesActions.searchFlightsSuccess({ flights: response });
         })
       ))
     )

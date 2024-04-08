@@ -13,8 +13,9 @@ export interface FlightsSearch {
   selectedTravelType: string;
   departure: string;
   destination?: string;
-  departDate: string;
-  returnDate?: string;
+  departDate: Date;
+  returnDate?: Date;
   passengerQuantity: number;
   classLevel: string;
 }
+

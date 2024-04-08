@@ -17,5 +17,5 @@ export const searchFlights = createAction(
 
 export const searchFlightsSuccess = createAction(
   '[Search] trip data loaded from api',
-  props<{ tripData: any }>()
+  props<{ flights: any }>()
 );

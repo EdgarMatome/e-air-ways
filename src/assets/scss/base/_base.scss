@@ -1,2 +1,32 @@
 @media only screen and (min-width: 1366px) {
 }
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.content {
+  flex: 1;
+  min-height: 100vh;
+  /* Add your content styles here */
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .footer {
+    flex-wrap: wrap;
+  }
+
+  .footer_col {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+}

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs';
-import { TravelRoutes } from '../models/routes';
+import { FlightsSearch, TravelRoutes } from '../models/routes';
 import { HttpClient } from '@angular/common/http';
+import { Flights } from '../models/flights';
 
 @Injectable({
   providedIn: 'root'
@@ -35,19 +36,21 @@ export class TripSearchService {
     return time;
   }
 
-  getTripFlights(searchData: any): Observable<any> {
+  getTripFlights(searchData: FlightsSearch): Observable<{ departureFlights: Flights[]; }> {
     const departureDate = searchData.departDate; // Extracting departure date from searchData
-    const departureFlights: any[] = [];
+    const departureFlights: Flights[] = [];
+
 
     // Generating 5 departure flight objects
     for (let i = 1; i <= 5; i++) {
       const departureDateTime = this.getRandomTime();
+      // TODO: fIX DATE BUG
       departureDateTime.setDate(departureDate.getDate());
       // departureDateTime.setHours(7 + (i - 1) * 3);  Set departure hour with a gap of 3 hours
       const arrivalDateTime = departureDate;
       arrivalDateTime.setHours(departureDateTime.getHours() + 2); // Add 5 hours to departure time for arrival time
 
-      const flight: any = {
+      const flight: Flights = {
         carrierCode: "FA",
         flightNumber: (100 + i).toString(),
         departureDateTime: departureDateTime.toISOString(),
@@ -58,7 +61,7 @@ export class TripSearchService {
 
       departureFlights.push(flight);
     }
-
+    console.log('Flights ==>', departureFlights);
     // Return departure flights as an observable
     return of({ departureFlights });
   }

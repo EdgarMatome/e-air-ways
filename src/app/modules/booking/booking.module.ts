@@ -19,6 +19,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FlightCardComponent } from './flights/flight-card/flight-card.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { FlightCardComponent } from './flights/flight-card/flight-card.component
     FlightCardComponent,
   ],
   imports: [
+    SharedModule,
     CommonModule,
     BookingRoutingModule,
     MatCardModule,

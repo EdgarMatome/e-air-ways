@@ -53,18 +53,20 @@
     <mat-card-content class="flight-route-card-body">
       <div class="row flight-route-card-body_wrapper">
         <div class="col-md-2 flight-route-card-body_price">
-          <span class="flight-price mb-2">{{ flight.price }}</span>
+          <span class="flight-price mb-2">R{{ flight.price }}</span>
           <span class="price-text">{{ flight.seatAvailability }}</span>
         </div>
         <div class="col-md-2 flight-route-card-body_departure-time">
-          <span class="flight-time">{{ flight.departureDateTime }}</span>
+          <span class="flight-time">{{ flight.departureDateTime | time }}</span>
           <span class="depature-text">Cape Town</span>
         </div>
         <div class="col-md-1 flight-route-card-body_icon">
           <span class="material-icons">flight</span>
         </div>
         <div class="col-md-2 flight-route-card-body_destination-time">
-          <span class="destination-time">{{ flight.arrivalDateTime }}</span
+          <span class="destination-time">{{
+            flight.arrivalDateTime | time
+          }}</span
           ><span class="destination-text">Cape Verde</span>
         </div>
         <div class="col-md-3 flight-route-card-body_button">

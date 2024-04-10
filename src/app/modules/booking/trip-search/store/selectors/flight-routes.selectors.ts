@@ -8,6 +8,7 @@ export const selectState = createFeatureSelector<Reducer.State>('store');
 
 export const selectFlightRoutes = createSelector(selectState, (state: State) => state.travelRoutes);
 export const selectFlights = createSelector(selectState, (state: State) => state.flights);
+export const selecteSearchData = createSelector(selectState, (state: State) => state.searchData);
 // export const selectFlightRoutes = createSelector(
 //   selectState,
 //   (state: State) => {

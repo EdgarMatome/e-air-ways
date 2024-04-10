@@ -16,3 +16,8 @@ export interface SearchData {
   passengerQuantity: number;
   classLevel: string;
 }
+
+export interface Trip {
+  departure: string;
+  arrival: string;
+}

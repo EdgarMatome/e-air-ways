@@ -58,7 +58,7 @@
         </div>
         <div class="col-md-2 flight-route-card-body_departure-time">
           <span class="flight-time">{{ flight.departureDateTime | time }}</span>
-          <span class="depature-text">Cape Town</span>
+          <span class="depature-text">{{ departureDispayString }}</span>
         </div>
         <div class="col-md-1 flight-route-card-body_icon">
           <span class="material-icons">flight</span>
@@ -67,7 +67,7 @@
           <span class="destination-time">{{
             flight.arrivalDateTime | time
           }}</span
-          ><span class="destination-text">Cape Verde</span>
+          ><span class="destination-text">{{ arrivalDisplayString }}</span>
         </div>
         <div class="col-md-3 flight-route-card-body_button">
           <span class="flight-route-card-body_button_flightNo">{{

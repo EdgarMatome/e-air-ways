@@ -1,23 +1,30 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { TravelRoutes } from '../../models/routes';
+import { FlightsSearch, TravelRoutes } from '../../models/routes';
 import { FlightRoutesActions } from '../actions';
+import { SearchData } from '../../models/flights';
 
 export const stateKey = 'flightRoutes';
 
 export interface State {
   travelRoutes: TravelRoutes[];
   flights: any;
+  searchData: any;
 }
 
 export const initialState: State = {
   travelRoutes: [],
-  flights: []
+  flights: [],
+  searchData: {}
 };
 
 export const flightRoutesReducer = createReducer(initialState,
   on(
     FlightRoutesActions.loadRoutesSuccess,
     (state, { travelRoutes }): State => ({ ...state, travelRoutes })
+  ),
+  on(
+    FlightRoutesActions.searchFlights,
+    (state, { searchData }): State => ({ ...state, searchData })
   ),
   on(
     FlightRoutesActions.searchFlightsSuccess,

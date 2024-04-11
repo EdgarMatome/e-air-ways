@@ -31,5 +31,5 @@ export const flightRoutesReducer = createReducer(initialState,
     (state, { flights }): State => ({ ...state, flights })
   )
 )
-// export const reducer = (state: State | undefined, action: Action): State => flightRoutesReducer(state, action);
+
 export const reducer = (state: State | undefined, action: Action): State => flightRoutesReducer(state, action);

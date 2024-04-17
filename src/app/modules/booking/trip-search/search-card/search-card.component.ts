@@ -6,6 +6,8 @@ import { TravelRoutes } from '../models/routes';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FlightRoutesActions } from '../store/actions';
+import { MatSelectChange } from '@angular/material/select';
+import { MatRadioChange } from '@angular/material/radio';
 
 @Component({
   selector: 'app-search-card',
@@ -67,7 +69,7 @@ export class SearchCardComponent implements OnInit {
   }
 
 
-  setDepature(event: any): void {
+  setDepature(event: MatSelectChange): void {
     this.locations.filter(x => {
       if (x.location === event.value) {
         this.destinations = x.routes
@@ -79,7 +81,7 @@ export class SearchCardComponent implements OnInit {
     //   }
   }
 
-  setDestination(event: any): void {
+  setDestination(event: MatSelectChange): void {
     this.locations.filter(x => {
       if (x.location === event.value) {
         this.depatures = x.routes
@@ -88,7 +90,7 @@ export class SearchCardComponent implements OnInit {
     })
   }
 
-  selectTrip(event: any): void {
+  selectTrip(event: MatRadioChange): void {
     console.log('Event', event);
     this.selectedTravelType = event.value;
     if (event.value === 'One-Way') {

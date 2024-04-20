@@ -5,6 +5,7 @@ export interface Flights {
   arrivalDateTime: string,
   price: number
   seatAvailability: string
+  duartion?: string;
 }
 
 export interface SearchData {

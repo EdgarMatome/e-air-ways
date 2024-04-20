@@ -36,6 +36,7 @@ export class FlightCardComponent implements OnInit {
   getFlightDuration() {
     // TODO: SPLIT DURATION FOR EACH ELEMNET
     this.flights.forEach(element => {
+
       // Define departure time and arrival time strings
       const departureTimeString = new Date(element.departureDateTime);
       const arrivalTimeString = new Date(element.arrivalDateTime);
@@ -52,7 +53,7 @@ export class FlightCardComponent implements OnInit {
       const durationMinutes = Math.floor((durationMs % (1000 * 60 * 60)) / (1000 * 60));
       const durationSeconds = Math.floor((durationMs % (1000 * 60)) / 1000);
 
-      this.flightDuration = `${durationHours} hrs, ${durationMinutes} min,`
+      this.flightDuration = `${durationHours} hrs, ${durationMinutes} min`;
 
       console.log(`Duration: ${durationHours} hours, ${durationMinutes} minutes, ${durationSeconds} seconds`);
 

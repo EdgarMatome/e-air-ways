@@ -59,6 +59,27 @@ export class TripSearchService {
     return time;
   }
 
+  // Function to check if departure date is close to today's date
+  isDepartureCloseToToday(departureDateString: string, thresholdDays: number): boolean {
+    // Parse the departure date string into a Date object
+    const departureDate = new Date(departureDateString);
+
+    // Get today's date
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Set hours, minutes, seconds, and milliseconds to 0 for comparison
+
+    // Calculate the difference in milliseconds between departure date and today's date
+    const timeDifferenceMs = departureDate.getTime() - today.getTime();
+
+    // Convert milliseconds to days
+    const differenceInDays = Math.abs(Math.ceil(timeDifferenceMs / (1000 * 60 * 60 * 24)));
+
+    // Check if the difference in days is within the threshold
+    return differenceInDays <= thresholdDays;
+  }
+
+
+
 
   getTripFlights(searchData: FlightsSearch): Observable<{ departureFlights: Flights[]; }> {
     const departureDate = searchData.departDate; // Extracting departure date from searchData
@@ -80,9 +101,20 @@ export class TripSearchService {
         flightNumber: (100 + i).toString(),
         departureDateTime: departureDateTime.toISOString(),
         arrivalDateTime: arrivalDateTime.toISOString(),
-        price: 1500 + i * 100, // Just an example price increment
+        price: 1500 + i * 120, // Just an example price increment
         seatAvailability: "Available"
       };
+
+      // Example usage
+      const departureDateString = "2024-04-21T08:59:00.000Z";
+      const thresholdDays = 3; // Define your threshold here
+
+      const isClose = this.isDepartureCloseToToday(flight.departureDateTime, thresholdDays);
+      if (isClose) {
+        flight.seatAvailability = 'Prices goes up soon';
+      }
+
+      // this.isDepartureCloseToToday(flight.departureDateTime, 3);
 
       departureFlights.push(flight);
     }

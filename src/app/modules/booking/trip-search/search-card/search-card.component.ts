@@ -29,6 +29,7 @@ export class SearchCardComponent implements OnInit {
   destination = 'Arrival Airport'
   selectedTravelType: string = 'return';
   travelType: string[] = ['Return', 'One-Way', 'Multi-Way'];
+  today = new Date();
 
   selectedRadio = 'return'
   isOneWayTrip = false;

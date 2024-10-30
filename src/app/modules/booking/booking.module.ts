@@ -20,6 +20,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FlightCardComponent } from './flights/flight-card/flight-card.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MatDatepickerModule,
     MatNativeDateModule,
     ReactiveFormsModule,
+    MatTabsModule,
   ],
 })
 export class BookingModule { }

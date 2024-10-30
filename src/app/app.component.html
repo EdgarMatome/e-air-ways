@@ -5,6 +5,14 @@
       <div class="row">
         <div class="col-md-12">
           <router-outlet></router-outlet>
+          <ngx-spinner
+            bdColor="rgba(0,0,0,0.6)"
+            size="medium"
+            color="#000"
+            type="ball-spin-clockwise"
+            [fullScreen]="true"
+          >
+          </ngx-spinner>
         </div>
       </div>
     </div>

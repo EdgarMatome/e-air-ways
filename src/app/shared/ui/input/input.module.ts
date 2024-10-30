@@ -4,7 +4,6 @@ import { InputComponent } from './input/input.component';
 
 
 
-
 @NgModule({
   declarations: [InputComponent],
   exports: [

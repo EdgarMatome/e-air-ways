@@ -23,7 +23,7 @@
       "dom"
     ],
     "paths": {
-      "@ui/*": [
+      "@uiComponents/*": [
         "src/app/shared/ui/*"
       ]
     },

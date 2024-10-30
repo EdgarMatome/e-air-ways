@@ -1,13 +1,14 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { FlightRoutesSelectors } from '../store/selectors';
-import { map } from 'rxjs/operators';
+import { delay, map } from 'rxjs/operators';
 import { TravelRoutes } from '../models/routes';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FlightRoutesActions } from '../store/actions';
 import { MatSelectChange } from '@angular/material/select';
 import { MatRadioChange } from '@angular/material/radio';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-search-card',
@@ -34,15 +35,19 @@ export class SearchCardComponent implements OnInit {
   selectedRadio = 'return'
   isOneWayTrip = false;
   searchForm!: FormGroup;
+  isFormValid = false;
   // tripType = 'oneway'
   // dstinations: any = ['Cape Town Int', 'Durban Int', 'OR Tambo Int']
 
 
   constructor(
+    protected _spinner: NgxSpinnerService,
     private _elementRef: ElementRef,
     protected _router: Router,
     protected _store: Store,
-  ) { }
+  ) {
+    this.toggleReturnDateValidator();
+  }
 
   ngOnInit(): void {
 
@@ -59,14 +64,23 @@ export class SearchCardComponent implements OnInit {
 
     this.searchForm = new FormGroup({
       selectedTravelType: new FormControl(),
-      departure: new FormControl([{ value: '' }, Validators.required]),
-      destination: new FormControl([{ value: '' }, Validators.required]),
-      departDate: new FormControl([{ value: '' }, Validators.required]),
-      returnDate: new FormControl([{ value: '' }]), // Optional, only if needed
-      passengerQuantity: new FormControl([{ value: '' }, Validators.required]),
-      classLevel: new FormControl([{ value: '' }])
+      departure: new FormControl(['', Validators.required]),
+      destination: new FormControl(['', Validators.required]),
+      departDate: new FormControl(['', Validators.required]),
+      returnDate: new FormControl(['']), // Optional, only if needed
+      passengerQuantity: new FormControl(['', Validators.required]),
+      classLevel: new FormControl([''], Validators.required)
     });
 
+  }
+
+  toggleReturnDateValidator() {
+    if (this.isOneWayTrip) {
+      this.searchForm?.get('returnDate')?.clearValidators();
+    } else {
+      this.searchForm?.get('returnDate')?.setValidators(Validators.required);
+    }
+    this.searchForm?.get('returnDate')?.updateValueAndValidity();
   }
 
 
@@ -96,17 +110,34 @@ export class SearchCardComponent implements OnInit {
     this.selectedTravelType = event.value;
     if (event.value === 'One-Way') {
       this.isOneWayTrip = true;
+      this.toggleReturnDateValidator();
     } else {
       this.isOneWayTrip = false;
     }
   }
 
+  checkFormValidity() {
+    console.log('CEHCK VALUE', this.searchForm.get('passengerQuantity'))
+    return (
+      this.searchForm.get('departure')?.value[0] !== '' &&
+      this.searchForm.get('destination')?.value[0] !== '' &&
+      this.searchForm.get('departDate')?.valid &&
+      (this.isOneWayTrip || this.searchForm.get('returnDate')?.valid) &&
+      this.searchForm.get('passengerQuantity')?.value[0] !== '' &&
+      this.searchForm.get('classLevel')?.value[0] !== ''
+    );
+  }
   search(): void {
     this.searchForm.controls['selectedTravelType'].setValue(this.selectedTravelType);
     const formValues = this.searchForm.getRawValue();
     console.warn('Raw Form Values', formValues);
     this._store.dispatch(FlightRoutesActions.searchFlights({ searchData: formValues }));
-    this._router.navigate(['/booking/flights']);
+    this._spinner.show();
+    // delay(1500);
+    setTimeout(() => {
+      this._spinner.hide();
+      this._router.navigate(['/booking/flights']);
+    }, 1000)
   }
 
 }

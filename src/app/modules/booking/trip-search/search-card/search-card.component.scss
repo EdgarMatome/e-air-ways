@@ -4,6 +4,7 @@
 
 ::ng-deep .mat-mdc-card {
   background-color: #fff !important;
+  filter: drop-shadow(1px 1px 20px #000);
 }
 // TODO: rEMOVED RADIUS ON CLASS LEVELS AND ADD BORDER IN BERTWEEN
 
@@ -54,10 +55,11 @@
 ::ng-deep label {
   text-align: center;
   color: #000;
+  margin-bottom: 0 !important;
 }
 
 ::ng-deep .mat-mdc-text-field-wrapper {
-  background-color: rgb(216, 216, 216) !important;
+  background-color: rgb(224, 226, 228) !important;
   padding: 5px !important;
   border-radius: 8px;
   width: 200px;
@@ -65,17 +67,18 @@
 }
 
 .from {
-  width: 260px !important;
+  width: 198px !important;
 }
 
 ::ng-deep .to {
-  width: 260px !important;
+  position: relative;
+  width: 198px !important;
   right: 37px;
 }
 
 .arrows-icon {
   color: #000 !important;
-  margin: 0 44px 0 95px;
+  margin: 0 20px 0 50px;
   font-size: 33px !important;
 }
 
@@ -143,7 +146,7 @@
 
 ::ng-deep {
   .depart-inner {
-    width: 130px !important;
+    width: 100px !important;
     .mat-mdc-text-field-wrapper {
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
@@ -151,7 +154,7 @@
     }
   }
   .returnDt {
-    width: 130px !important;
+    width: 100px !important;
     // position: relative;
     // right: 34px;
     // .mat-mdc-text-field-wrapper {
@@ -163,7 +166,7 @@
 
 ::ng-deep .departDt {
   .mat-form-field-wrapper {
-    width: 130px !important;
+    width: 100px !important;
   }
 
   .returnDt {
@@ -187,7 +190,7 @@
 
 ::ng-deep .passenger-class {
   position: absolute;
-  left: 449px;
+  left: 279px;
   bottom: 45px;
 }
 
@@ -195,7 +198,7 @@
   // left: 132px !important;
 
   .mat-mdc-text-field-wrapper {
-    width: 132px !important;
+    width: 101px !important;
   }
 }
 
@@ -204,7 +207,7 @@
   right: 38px;
 
   .mat-mdc-text-field-wrapper {
-    width: 130px !important;
+    width: 101px !important;
     border-left: 2px solid #9e9999;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
@@ -214,5 +217,5 @@
 ::ng-deep .search {
   position: absolute;
   bottom: 136px;
-  left: 791px;
+  left: 590px;
 }

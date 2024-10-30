@@ -1,5 +1,5 @@
 .wrapper {
-  background-image: url(../../../../../assets/images/holiday4.jpg);
+  background-image: url(../../../../../assets/images/holiday.jpg);
   background-position: 100%;
   background-size: cover;
   color: #000000;
@@ -11,8 +11,17 @@
   }
 
   .search-card-warpper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    bottom: 50px;
+    margin-bottom: 80px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+  }
+
+  .hero-text {
+    font-size: 38px;
+    color: #fff;
+    filter: drop-shadow(1px 1px 5px #000);
   }
 }

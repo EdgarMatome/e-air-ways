@@ -1,4 +1,10 @@
 <mat-card class="card search-card mb-5 mt-5">
+  <!-- <mat-tab-group>
+          <mat-tab label="Flight">
+
+          </mat-tab>
+          <mat-tab label="My Bookings"> MY bookings</mat-tab>
+        </mat-tab-group> -->
   <mat-card-header>
     <mat-radio-group class="ex" [(ngModel)]="selectedTravelType">
       <mat-radio-button
@@ -108,7 +114,13 @@
     </div>
 
     <div class="search">
-      <button class="btn primary btn-lg" (click)="search()">Search</button>
+      <button
+        class="btn primary btn-lg"
+        [disabled]="!checkFormValidity()"
+        (click)="search()"
+      >
+        Search
+      </button>
     </div>
   </mat-card-content>
 </mat-card>

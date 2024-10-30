@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TimePipe } from './pipes';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -10,10 +11,12 @@ import { TimePipe } from './pipes';
     TimePipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgxSpinnerModule,
   ],
   exports: [
-    TimePipe
+    TimePipe,
+    NgxSpinnerModule,
   ]
 })
 export class SharedModule { }

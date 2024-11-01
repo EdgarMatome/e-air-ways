@@ -6,6 +6,26 @@
   background-color: #fff !important;
   filter: drop-shadow(1px 1px 20px #000);
 }
+
+::ng-deep .mdc-tab {
+  background-color: #111f44;
+}
+
+::ng-deep .mdc-tab--active {
+  background-color: #9ad3f2;
+  .mdc-tab__text-label {
+    color: #fff !important;
+  }
+
+  .mdc-tab-indicator__content--underline {
+    border-color: #9ad3f2 !important;
+  }
+}
+
+.mat-mdc-card-content {
+  padding: 0px 0px !important;
+}
+
 // TODO: rEMOVED RADIUS ON CLASS LEVELS AND ADD BORDER IN BERTWEEN
 
 // .passenger-class {
@@ -136,9 +156,9 @@
 ::ng-deep {
   .oneway {
     .mat-mdc-text-field-wrapper {
-      width: 260px !important;
-      border-top-right-radius: 8px !important;
-      border-bottom-right-radius: 8px !important;
+      width: 200px !important;
+      border-top-right-radius: 3px !important;
+      border-bottom-right-radius: 3px !important;
       border-right: none !important;
     }
   }
@@ -148,6 +168,7 @@
   .depart-inner {
     width: 100px !important;
     .mat-mdc-text-field-wrapper {
+      bottom: 25px;
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
       border-right: 2px solid #9e9999;
@@ -155,8 +176,8 @@
   }
   .returnDt {
     width: 100px !important;
-    // position: relative;
-    // right: 34px;
+    position: relative;
+    bottom: 25px;
     // .mat-mdc-text-field-wrapper {
     //   border-top-left-radius: 0px !important;
     //   border-bottom-left-radius: 0px !important;
@@ -176,6 +197,9 @@
       border-top-left-radius: 0px;
       border-bottom-left-radius: 0px;
     }
+    // .mat-mdc-text-field-wrapper {
+    //   bottom: 25px;
+    // }
   }
 
   .mat-form-field-flex {
@@ -185,13 +209,13 @@
 
 ::ng-deep .isOneWay {
   position: absolute !important;
-  left: 448px !important;
+  left: 263px !important;
 }
 
 ::ng-deep .passenger-class {
   position: absolute;
-  left: 279px;
-  bottom: 45px;
+  left: 264px;
+  bottom: 24px;
 }
 
 ::ng-deep .ps-quantity {

@@ -1,126 +1,137 @@
 <mat-card class="card search-card mb-5 mt-5">
-  <!-- <mat-tab-group>
-          <mat-tab label="Flight">
-
-          </mat-tab>
-          <mat-tab label="My Bookings"> MY bookings</mat-tab>
-        </mat-tab-group> -->
-  <mat-card-header>
-    <mat-radio-group class="ex" [(ngModel)]="selectedTravelType">
-      <mat-radio-button
-        class="radio-button text-dark mr-2"
-        *ngFor="let trip of travelType"
-        [value]="trip"
-        (change)="selectTrip($event)"
-      >
-        {{ trip }}
-      </mat-radio-button>
-    </mat-radio-group>
-  </mat-card-header>
-  <mat-card-content>
-    <div class="dep-destination">
-      <form [formGroup]="searchForm">
-        <mat-form-field class="from">
-          <mat-select
-            [placeholder]="depature"
-            formControlName="departure"
-            (selectionChange)="setDepature($event)"
+  <mat-tab-group>
+    <mat-tab label="Flight">
+      <mat-card-header>
+        <mat-radio-group class="ex" [(ngModel)]="selectedTravelType">
+          <mat-radio-button
+            class="radio-button text-dark mr-2"
+            *ngFor="let trip of travelType"
+            [value]="trip"
+            (change)="selectTrip($event)"
           >
-            <mat-option *ngFor="let dep of depatures" [value]="dep.location">
-              {{ dep.location }}</mat-option
-            >
-          </mat-select>
-        </mat-form-field>
-        <span class="material-icons arrows-icon"> sync_alt </span>
-        <mat-form-field class="to">
-          <mat-select
-            [placeholder]="destination"
-            formControlName="destination"
-            (selectionChange)="setDestination($event)"
-          >
-            <mat-option *ngFor="let des of destinations" [value]="des.location">
-              {{ des.location }}</mat-option
-            >
-          </mat-select>
-        </mat-form-field>
-
-        <div class="date-wrapperzzzz">
-          <div class="departDat">
-            <mat-form-field
-              class="depart-inner"
-              [ngClass]="{ oneway: isOneWayTrip }"
-              appearance="fill"
-            >
-              <mat-label>Depart</mat-label>
-              <input
-                matInput
-                [matDatepicker]="picker"
-                [min]="today"
-                formControlName="departDate"
-              />
-              <mat-datepicker-toggle
-                matSuffix
-                [for]="picker"
-              ></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-            <mat-form-field
-              class="returnDt"
-              *ngIf="!isOneWayTrip"
-              appearance="fill"
-            >
-              <mat-label>Return</mat-label>
-              <input
-                matInput
-                [matDatepicker]="picker1"
-                [min]="today"
-                formControlName="returnDate"
-              />
-              <mat-datepicker-toggle
-                matSuffix
-                [for]="picker1"
-              ></mat-datepicker-toggle>
-              <mat-datepicker #picker1></mat-datepicker>
-            </mat-form-field>
-          </div>
-
-          <div class="passenger-class" [ngClass]="{ isOneWay: isOneWayTrip }">
-            <mat-form-field class="ps-quantity">
+            {{ trip }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="dep-destination">
+          <form [formGroup]="searchForm">
+            <mat-form-field class="from">
               <mat-select
-                [placeholder]="passengerPlaceholder"
-                formControlName="passengerQuantity"
+                [placeholder]="depature"
+                formControlName="departure"
+                (selectionChange)="setDepature($event)"
               >
                 <mat-option
-                  *ngFor="let passenger of passengerQt"
-                  [value]="passenger"
+                  *ngFor="let dep of depatures"
+                  [value]="dep.location"
                 >
-                  {{ passenger }}</mat-option
+                  {{ dep.location }}</mat-option
                 >
               </mat-select>
             </mat-form-field>
-            <mat-form-field class="ps-level">
+            <span class="material-icons arrows-icon"> sync_alt </span>
+            <mat-form-field class="to">
               <mat-select
-                [placeholder]="classLevelPlHolder"
-                formControlName="classLevel"
+                [placeholder]="destination"
+                formControlName="destination"
+                (selectionChange)="setDestination($event)"
               >
-                <mat-option *ngFor="let class of classLevel" [value]="class">
-                  {{ class }}</mat-option
+                <mat-option
+                  *ngFor="let des of destinations"
+                  [value]="des.location"
+                >
+                  {{ des.location }}</mat-option
                 >
               </mat-select>
             </mat-form-field>
-          </div>
-        </div>
-      </form>
-    </div>
 
-    <div class="search">
-      <button
-        class="btn primary btn-lg"
-        [disabled]="!checkFormValidity()"
-        (click)="search()"
-      >
-        Search
-      </button>
-    </div>
-  </mat-card-content>
+            <div class="date-wrapperzzzz">
+              <div class="departDat">
+                <mat-form-field
+                  class="depart-inner"
+                  [ngClass]="{ oneway: isOneWayTrip }"
+                  appearance="fill"
+                >
+                  <mat-label>Depart</mat-label>
+                  <input
+                    matInput
+                    [matDatepicker]="picker"
+                    [min]="today"
+                    formControlName="departDate"
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="picker"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field
+                  class="returnDt"
+                  *ngIf="!isOneWayTrip"
+                  appearance="fill"
+                >
+                  <mat-label>Return</mat-label>
+                  <input
+                    matInput
+                    [matDatepicker]="picker1"
+                    [min]="today"
+                    formControlName="returnDate"
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="picker1"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+              </div>
+
+              <div
+                class="passenger-class"
+                [ngClass]="{ isOneWay: isOneWayTrip }"
+              >
+                <mat-form-field class="ps-quantity">
+                  <mat-select
+                    [placeholder]="passengerPlaceholder"
+                    formControlName="passengerQuantity"
+                  >
+                    <mat-option
+                      *ngFor="let passenger of passengerQt"
+                      [value]="passenger"
+                    >
+                      {{ passenger }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field class="ps-level">
+                  <mat-select
+                    [placeholder]="classLevelPlHolder"
+                    formControlName="classLevel"
+                  >
+                    <mat-option
+                      *ngFor="let class of classLevel"
+                      [value]="class"
+                    >
+                      {{ class }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="search">
+          <button
+            class="btn primary btn-lg"
+            [disabled]="!checkFormValidity()"
+            (click)="search()"
+          >
+            Search
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-tab>
+    <mat-tab label="My Bookings"> MY bookings</mat-tab>
+  </mat-tab-group>
 </mat-card>

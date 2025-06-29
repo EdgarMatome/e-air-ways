@@ -51,31 +51,188 @@
       </div>
     </mat-card-header>
     <mat-card-content class="flight-route-card-body">
-      <div class="row flight-route-card-body_wrapper">
-        <div class="col-md-2 flight-route-card-body_price">
-          <span class="flight-price mb-2">R{{ flight.price }}</span>
-          <span class="price-text">{{ flight.seatAvailability }}</span>
+      <mat-expansion-panel class="mat-elevation-z" hideToggle>
+        <mat-expansion-panel-header>
+          <div class="row flight-route-card-body_wrapper">
+            <div class="col-md-2 flight-route-card-body_price">
+              <!-- <span class="flight-price mb-2">R{{ flight.price }}</span> -->
+              <span class="price-text">{{ flight.seatAvailability }}</span>
+            </div>
+
+            <div class="col-md-2 flight-route-card-body_departure-time">
+              <span class="flight-time">{{
+                flight.departureDateTime | time
+              }}</span>
+              <span class="depature-text">{{ departureDispayString }}</span>
+            </div>
+
+            <div class="col-md-1 flight-route-card-body_icon">
+              <span class="material-icons">flight</span>
+            </div>
+
+            <div class="col-md-2 flight-route-card-body_destination-time">
+              <span class="destination-time">{{
+                flight.arrivalDateTime | time
+              }}</span
+              ><span class="destination-text">{{ arrivalDisplayString }}</span>
+            </div>
+            <div class="col-md-3 flight-route-card-body_button">
+              <span class="flight-route-card-body_button_flightNo">{{
+                flight.carrierCode + flight.flightNumber
+              }}</span>
+              <button class="btn primary">
+                <span class="flight-price mb-2">R{{ flight.price }}</span>
+              </button>
+            </div>
+          </div>
+        </mat-expansion-panel-header>
+        <!-- HTML Template -->
+        <div class="fare-comparison-container">
+          <!-- Lite Card -->
+          <mat-card class="fare-card lite-card">
+            <mat-card-header class="card-header lite-header">
+              <mat-card-title>Lite</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="fare-options">
+                <div class="option">
+                  <mat-icon>work</mat-icon>
+                  <span>Hand Luggage</span>
+                </div>
+                <div class="option">
+                  <mat-icon>luggage</mat-icon>
+                  <span>Checked luggage sold separately</span>
+                </div>
+                <div class="option">
+                  <mat-icon>sync_alt</mat-icon>
+                  <div class="option-text">
+                    <span>Change Fee Applies</span>
+                    <span class="sub-note">R300 + Fare Difference</span>
+                  </div>
+                </div>
+                <div class="option">
+                  <mat-icon>account_balance_wallet</mat-icon>
+                  <div class="option-text">
+                    <span>Refund to Wallet</span>
+                    <span class="sub-note">R300 fee</span>
+                  </div>
+                </div>
+                <div class="option">
+                  <mat-icon>star</mat-icon>
+                  <span>Have FlyMore tokens?</span>
+                  <span class="sub-note"
+                    >FlyMore tokens can be applied to this fare</span
+                  >
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button class="price-button lite-button">
+                R 1,911.44
+              </button>
+            </mat-card-actions>
+          </mat-card>
+
+          <!-- Standard Card -->
+          <mat-card class="fare-card standard-card">
+            <div class="popular-badge">MOST POPULAR</div>
+            <mat-card-header class="card-header standard-header">
+              <mat-card-title>Standard</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="fare-options">
+                <div class="option">
+                  <mat-icon>work</mat-icon>
+                  <span>Hand Luggage</span>
+                </div>
+                <div class="option">
+                  <mat-icon>luggage</mat-icon>
+                  <span>Checked Luggage</span>
+                  <span class="sub-note">1 item, max 20kg</span>
+                </div>
+                <div class="option">
+                  <mat-icon>sync_alt</mat-icon>
+                  <span>2 Fee-free Changes</span>
+                  <span class="sub-note">fare differences may apply</span>
+                </div>
+                <div class="option">
+                  <mat-icon>account_balance_wallet</mat-icon>
+                  <span>Refund to Wallet</span>
+                  <span class="sub-note">R300 fee</span>
+                </div>
+                <div class="exclusive-discount">EXCLUSIVE DISCOUNT</div>
+                <div class="option">
+                  <mat-icon>priority_high</mat-icon>
+                  <span>Priority Boarding</span>
+                  <span class="discount-text">50% Discount</span>
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button class="price-button standard-button">
+                R 2,111.44
+              </button>
+            </mat-card-actions>
+          </mat-card>
+
+          <!-- Business Class Card -->
+          <mat-card class="fare-card business-card">
+            <mat-card-header class="card-header business-header">
+              <mat-icon class="premium-icon">workspace_premium</mat-icon>
+              <mat-card-title>Business Class</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="fare-options">
+                <div class="option">
+                  <mat-icon>work</mat-icon>
+                  <span>Hand Luggage</span>
+                </div>
+                <div class="option">
+                  <mat-icon>luggage</mat-icon>
+                  <span>Checked Luggage</span>
+                  <span class="sub-note">2 items, max 23kg each</span>
+                </div>
+                <div class="option">
+                  <mat-icon>sports_cricket</mat-icon>
+                  <span>Special Equipment</span>
+                  <span class="sub-note">1 item, max 32kg</span>
+                </div>
+                <div class="option">
+                  <mat-icon>sync_alt</mat-icon>
+                  <span>Unlimited Fee-free Changes</span>
+                  <span class="sub-note">fare differences may apply</span>
+                </div>
+                <div class="option">
+                  <mat-icon>priority_high</mat-icon>
+                  <span>Priority Boarding</span>
+                </div>
+                <div class="option">
+                  <mat-icon>account_balance_wallet</mat-icon>
+                  <span>Free Refund to Wallet</span>
+                  <span class="sub-note">no fees apply</span>
+                </div>
+                <div class="option">
+                  <mat-icon>airline_seat_recline_extra</mat-icon>
+                  <span>Empty Middle Seat</span>
+                </div>
+                <div class="option">
+                  <mat-icon>work_outline</mat-icon>
+                  <span>Priority Bag</span>
+                </div>
+                <div class="option">
+                  <mat-icon>restaurant</mat-icon>
+                  <span>R85 Meal Allowance</span>
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button class="price-button business-button">
+                R 2,911.44
+              </button>
+            </mat-card-actions>
+          </mat-card>
         </div>
-        <div class="col-md-2 flight-route-card-body_departure-time">
-          <span class="flight-time">{{ flight.departureDateTime | time }}</span>
-          <span class="depature-text">{{ departureDispayString }}</span>
-        </div>
-        <div class="col-md-1 flight-route-card-body_icon">
-          <span class="material-icons">flight</span>
-        </div>
-        <div class="col-md-2 flight-route-card-body_destination-time">
-          <span class="destination-time">{{
-            flight.arrivalDateTime | time
-          }}</span
-          ><span class="destination-text">{{ arrivalDisplayString }}</span>
-        </div>
-        <div class="col-md-3 flight-route-card-body_button">
-          <span class="flight-route-card-body_button_flightNo">{{
-            flight.carrierCode + flight.flightNumber
-          }}</span>
-          <button class="btn primary">Book</button>
-        </div>
-      </div>
+      </mat-expansion-panel>
     </mat-card-content>
   </mat-card>
 </div>

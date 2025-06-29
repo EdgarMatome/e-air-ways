@@ -29,7 +29,7 @@ export class SearchCardComponent implements OnInit {
   depature = 'Depature Airport'
   destination = 'Arrival Airport'
   selectedTravelType: string = 'return';
-  travelType: string[] = ['Return', 'One-Way', 'Multi-Way'];
+  travelType: string[] = ['Round-trip', 'One-Way'];
   today = new Date();
 
   selectedRadio = 'return'
@@ -51,12 +51,13 @@ export class SearchCardComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.flightRoutes$.pipe(map(flightRoutes => {
-      console.warn('Flight Routes', flightRoutes);
-      this.locations = flightRoutes;
-      this.depatures = flightRoutes;
-      this.destinations = flightRoutes;
-    })).subscribe();
+    this.flightRoutes$.pipe(
+      map(flightRoutes => {
+        console.warn('Flight Routes', flightRoutes);
+        this.locations = flightRoutes;
+        this.depatures = flightRoutes;
+        this.destinations = flightRoutes;
+      })).subscribe();
 
     if (this._elementRef) {
       this._elementRef.nativeElement.focus();
@@ -74,7 +75,7 @@ export class SearchCardComponent implements OnInit {
 
   }
 
-  toggleReturnDateValidator() {
+  toggleReturnDateValidator(): void {
     if (this.isOneWayTrip) {
       this.searchForm?.get('returnDate')?.clearValidators();
     } else {
@@ -97,12 +98,7 @@ export class SearchCardComponent implements OnInit {
   }
 
   setDestination(event: MatSelectChange): void {
-    this.locations.filter(x => {
-      if (x.location === event.value) {
-        this.depatures = x.routes
-        console.warn('Depature event', x);
-      }
-    })
+    this.locations.filter(x => x.location === event.value ? this.depatures = x.routes : [])
   }
 
   selectTrip(event: MatRadioChange): void {
@@ -116,7 +112,7 @@ export class SearchCardComponent implements OnInit {
     }
   }
 
-  checkFormValidity() {
+  checkFormValidity(): boolean {
     console.log('CEHCK VALUE', this.searchForm.get('passengerQuantity'))
     return (
       this.searchForm.get('departure')?.value[0] !== '' &&
@@ -125,7 +121,7 @@ export class SearchCardComponent implements OnInit {
       (this.isOneWayTrip || this.searchForm.get('returnDate')?.valid) &&
       this.searchForm.get('passengerQuantity')?.value[0] !== '' &&
       this.searchForm.get('classLevel')?.value[0] !== ''
-    );
+    ) ? true : false //Confirm if this still validates the form correctly
   }
   search(): void {
     this.searchForm.controls['selectedTravelType'].setValue(this.selectedTravelType);

@@ -4,7 +4,7 @@
 
 ::ng-deep .mat-mdc-card {
   background-color: #fff !important;
-  filter: drop-shadow(1px 1px 20px #000);
+  // filter: drop-shadow(1px 1px 20px #000);
 }
 
 ::ng-deep .mdc-tab {
@@ -240,6 +240,6 @@
 
 ::ng-deep .search {
   position: absolute;
-  bottom: 136px;
+  bottom: 100px;
   left: 590px;
 }

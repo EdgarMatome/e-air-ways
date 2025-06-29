@@ -3,6 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { Flights, SearchData, Trip } from '../../trip-search/models/flights';
 import { FlightRoutesSelectors } from '../../trip-search/store/selectors';
 import { Observable, map, tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flight-card',
@@ -17,7 +18,10 @@ export class FlightCardComponent implements OnInit {
   arrivalDisplayString!: string | null;
   flightDuration!: string;
 
-  constructor(protected _store: Store) { }
+  constructor(
+    protected _router: Router,
+    protected _store: Store
+  ) { }
 
   ngOnInit(): void {
     this._store.pipe(select(FlightRoutesSelectors.selectFlights)).subscribe(x => this.flights = x.departureFlights);
@@ -28,12 +32,17 @@ export class FlightCardComponent implements OnInit {
         this.trip = action;
       })).subscribe();
 
+    if (!this.flights) {
+      this._router.navigate(['/search']);
+    }
+
+
     this.getFlightDuration();
     this.departureDispayString = this.getTripDisplayString(this.trip.departure);
     this.arrivalDisplayString = this.getTripDisplayString(this.trip.destination)
   }
 
-  getFlightDuration() {
+  getFlightDuration(): void {
     // TODO: SPLIT DURATION FOR EACH ELEMNET
     this.flights.forEach(element => {
 

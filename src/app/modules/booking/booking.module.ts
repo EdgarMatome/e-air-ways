@@ -21,6 +21,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FlightCardComponent } from './flights/flight-card/flight-card.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -49,6 +51,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatNativeDateModule,
     ReactiveFormsModule,
     MatTabsModule,
+    MatExpansionModule,
+    MatIconModule,
   ],
 })
 export class BookingModule { }

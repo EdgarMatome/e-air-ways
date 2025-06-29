@@ -21,6 +21,15 @@
   }
 }
 
+::ng-deep .mat-content {
+  display: block !important;
+}
+
+::ng-deep .mat-expansion-panel {
+  background: none;
+  color: #000;
+}
+
 .promotion-card-inner:last-child {
   padding-bottom: 5px !important;
 }
@@ -166,6 +175,177 @@
 
     .primary:hover {
       border-color: #000;
+    }
+  }
+  // PROMO CARDS STYLES
+
+  /* CSS Styles */
+  .fare-comparison-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    padding: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #d9dddd;
+  }
+
+  // .mat-expansion-panel-content {
+  //   background-color: red;
+  // }
+
+  .fare-card {
+    width: 300px;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .fare-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-header {
+    padding: 16px;
+    text-align: center;
+    color: white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  .lite-header {
+    background-color: #5eb1e5;
+  }
+
+  .standard-header {
+    background-color: #3498db;
+  }
+
+  .business-header {
+    background-color: #2471a3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .premium-icon {
+    margin-right: 8px;
+  }
+
+  .fare-options {
+    padding: 8px;
+  }
+
+  .option {
+    display: flow-root;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    gap: 8px;
+  }
+
+  .option mat-icon {
+    color: #3498db;
+    flex-shrink: 0;
+  }
+
+  .option span {
+    margin-left: 10px;
+  }
+
+  .sub-note {
+    display: block;
+    font-size: 12px;
+    color: #7f8c8d;
+    // margin-left: 35px;
+  }
+
+  .option-text {
+    display: inline;
+    position: absolute;
+  }
+
+  .price-button {
+    width: 80%;
+    margin: 0 auto 16px !important;
+    padding: 8px;
+    color: white !important;
+    font-weight: bold;
+  }
+
+  .lite-button {
+    background-color: #e91e63 !important;
+  }
+
+  .standard-button {
+    background-color: #e91e63 !important;
+  }
+
+  .business-button {
+    background-color: #e91e63 !important;
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    background-color: #e91e63;
+    color: white;
+    text-align: center;
+    padding: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    width: 120px;
+    margin: 0 auto;
+  }
+
+  .popular-badge::before {
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #9d1d5d;
+    content: "";
+    position: absolute;
+    top: 4px;
+  }
+
+  .popular-badge::after {
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #9d1d5d;
+    content: "";
+    position: absolute;
+    top: 4px;
+  }
+
+  .exclusive-discount {
+    background-color: #2ecc71;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin: 8px 0;
+    display: inline-block;
+  }
+
+  .discount-text {
+    color: #2ecc71;
+    font-weight: bold;
+    margin-left: 4px;
+  }
+
+  mat-card-title {
+    font-size: 20px !important;
+    font-weight: 500;
+    margin: 0 !important;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .fare-card {
+      width: 100%;
+      max-width: 350px;
     }
   }
 }
